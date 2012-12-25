@@ -1,6 +1,6 @@
 alias ll='ls -Gla'
 
-if [ `uname` == "darwin" ]; then
+if [ `uname` == "Darwin" ]; then
 	alias ls='ls -G'
 fi
 
