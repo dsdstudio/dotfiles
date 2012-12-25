@@ -1,0 +1,7 @@
+alias ll='ls -Gla'
+
+if [ `uname` == "darwin" ]; then
+	alias ls='ls -G'
+fi
+
+alias sl='open -a "Sublime Text 2"'

@@ -1,0 +1,14 @@
+[user]
+	email = dsdgun@gmail.com
+	name = 보롱킴
+[color]
+	ui = auto
+
+[alias]
+	ci = commit
+	st = status
+	co = checkout
+	log-local = log --oneline origin..HEAD
+[core]
+	excludesfile = /Users/bhkim/.gitignore_g
+	editor = vim

@@ -1,0 +1,88 @@
+#!/bin/bash 
+
+# 어드민 비번 묻기 
+sudo -v 
+
+##############################
+# UI / UX 설정               #
+##############################
+
+
+sudo scutil --set ComputerName "bhkim-MBP"
+sudo scutil --set HostName "bhkim-MBP"
+sudo scutil --set LocalHostName "bhkim-MBP"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "bhkim-MBP"
+
+# window resize 할때 Delay 를 줄인다. 
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+
+# 프린트 후 print app 자동종료되도록 
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+# 인터넷에서 다운받은 프로그램이니까 확인좀 하자 Dialog 안뜨도록 
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+# 파인더에서 모든 파일의 확장자가 보이도록 
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# 검색시 현재 폴더를 scope 로 잡도록 
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Finder 하단에 path bar 가 보이도록 
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Finder 에 status bar 가 보이도록 
+defaults write com.apple.finder ShowStatusBar -bool true
+
+
+##############################
+# IO 관련  설정              #
+##############################
+# Network 로 연결된 볼륨에 .DS_Store 파일 생성하지않도록 
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# 파일 확장자 바꿀때 dialog 뜨지않고 바꿀수 있도록 
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# 트랙패드 탭했을때 클릭으로 인식하도록 
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+
+# 자동완성 끄기 
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# 키보드 반복 주기 짧게 설정 
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
+
+# 마우스 스크롤 반대로 되지않도록 
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+
+# Ctrl (^) key 로 zoom 할수있도록 
+defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+
+#  zoom 되었을때 keyboard focus 가 따라오도록 
+defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
+
+# Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+##############################
+# 보안 관련 설정             #
+##############################
+
+# sleep 모드나 screen saver 에서 나올때 비밀번호 무조건 물어보도록
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# webkit 개발자 모드 보이도록 
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# ~/Library 폴더 볼수있도록 설정 
+chflags nohidden ~/Library
+
+# 숨김파일 보기 
+defaults write com.apple.Finder AppleShowAllFiles YES
+
+# 위설정에 영향받는 App 들 모두 kill 
+for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done
