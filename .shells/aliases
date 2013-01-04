@@ -1,8 +1,16 @@
+#!/bin/sh
+
+# personal aliases 
+
 alias ll='ls -Gla'
 
-if [ `uname` == "Darwin" ]; then
+OS=`uname | tr '[:upper:]' '[:lower:]'`
+if [ "$OS" == "Darwin" ]; then
 	alias ls='ls -G'
 fi
 
 alias blog="cd ${HOME}/Dropbox/haroopress"
 alias sl='open -a "Sublime Text 2"'
+
+## Aliases
+alias grep='grep --color'
