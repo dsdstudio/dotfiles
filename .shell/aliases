@@ -1,5 +1,0 @@
-alias ls='ls -G'
-alias ll='ls -Gla'
-alias blog="cd ${HOME}/Dropbox/haroopress"
-
-alias sl='open -a "Sublime Text 2"'
