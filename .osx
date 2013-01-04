@@ -1,5 +1,13 @@
 #!/bin/bash 
 
+OS=`uname | tr '[:upper:]' '[:lower:]'`
+__name="dsdstudio-MBP"
+
+# osx 일때만 실행가능하도록 
+if [ "$OS" != "darwin" ]; then 
+	exit 1
+fi
+
 # 어드민 비번 묻기 
 sudo -v 
 
@@ -8,10 +16,10 @@ sudo -v
 ##############################
 
 
-sudo scutil --set ComputerName "bhkim-MBP"
-sudo scutil --set HostName "bhkim-MBP"
-sudo scutil --set LocalHostName "bhkim-MBP"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "bhkim-MBP"
+sudo scutil --set ComputerName "${__name}"
+sudo scutil --set HostName "${__name}"
+sudo scutil --set LocalHostName "${__name}"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "${__name}"
 
 # window resize 할때 Delay 를 줄인다. 
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
