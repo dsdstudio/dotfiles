@@ -9,7 +9,7 @@ if [ "$OS" == "Darwin" ]; then
 	alias ls='ls -G'
 fi
 
-alias blog="cd ${HOME}/Dropbox/haroopress"
+alias blog="cd ${HOME}/Dropbox/blog"
 alias sl='open -a "Sublime Text 2"'
 
 ## Aliases
