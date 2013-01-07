@@ -3,6 +3,12 @@
 ## Language setting 
 export LANG=ko_KR.UTF-8
 
+## for nvm node_path 
+NP=$(which node) 
+BP=${NP%bin/node} 
+LP="${BP}lib/node_modules"
+
+
 ## Path 
 export NVM_DIR=$HOME/.nvm
 export M2_HOME=/usr/share/maven
@@ -10,12 +16,19 @@ export GRADLE_HOME=$HOME/Environment/tools/gradle
 export DART_HOME=$HOME/Environment/tools/dart-sdk
 export PLAY_HOME=$HOME/Enviromnent/tools/play
 export PATH=$M2_HOME/bin:$HOME/Environment/racket/bin:$HOME/Dropbox/bin:$PATH:$GRADLE_HOME/bin:$DART_HOME/bin:$PLAY_HOME
+export NODE_PATH=$LP
+
+## Colors 
+_green=`tput setaf 2`
+_yellow=`tput setaf 3`
+_pink=`tput setaf 5`
+_sgr0=`tput sgr0`
 
 # use vim syntax in commandline 
 set -o vi
 
 # Prompt setting
-export PS1='\[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 3)\]\h\[$(tput sgr0)\] \w\[$(tput setaf 5)\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[$(tput setaf 2)\]``\[$(tput sgr0)\] \n  '
+export PS1='\[${_green}\]\u\[${_sgr0}\]@\[${_yellow}\]\h\[${_sgr0}\] \w\[${_pink}\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[${c_g}\]``\[${_sgr0}\] \n  '
 
 # ls coloring for OSX Dark background 
 export LSCOLORS=dxfxcxdxbxegedabagacad
