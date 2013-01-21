@@ -45,6 +45,8 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # 풀스크린일때 상단 메뉴바 iOS 스타일로 
 defaults delete -g NSFullScreenDarkMenu
 
+# QuickLook 딜레이 없애기 
+defaults write -g QLPanelAnimationDuration -float 0
 
 ##############################
 # IO 관련  설정              #
