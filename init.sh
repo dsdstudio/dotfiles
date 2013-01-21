@@ -8,7 +8,7 @@ NVM_DIR=~/.nvm
 ## HomeBrew Base configurations 
 ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 
-brew install git tmux mysql tree nginx bash bash-completion mercurial 
+brew update && brew install git tmux mysql tree nginx bash bash-completion mercurial phantomjs
 # vcprompt => vcs info shell 표시용 프로그램 같은 옵션으로 설치불가능 
 brew install --HEAD vcprompt 
 
