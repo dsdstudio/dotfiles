@@ -16,3 +16,14 @@ brew install --HEAD vcprompt
 (curl https://raw.github.com/creationix/nvm/master/install.sh | sh) || (wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh)
 
 . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
+
+# Mac Keybindings for Home, end, pageup pagedown 
+mkdir -p ~/Library/KeyBindings/
+echo " {
+	\"\UF729\" = \"moveToBeginningOfLine:\";
+	\"$\UF729\" = \"moveToBeginningOfLineAndModifySelection:\";
+	\"\UF72B\" = \"moveToEndOfLine:\";
+	\"$\UF72B\" = \"moveToEndOfLineAndModifySelection:\";
+	\"\UF72C\" = \"pageUp:\";
+	\"\UF72D\" = \"pageDown:\";
+}" > ~/Library/KeyBindings/DefaultKeyBinding.dict
