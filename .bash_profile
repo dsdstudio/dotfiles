@@ -8,8 +8,8 @@ export NVM_DIR=$HOME/.nvm
 export M2_HOME=/usr/share/maven
 export GRADLE_HOME=$HOME/Environment/tools/gradle
 export DART_HOME=$HOME/Environment/tools/dart-sdk
-export PLAY_HOME=$HOME/Environment/tools/play-2.1.0
-export PATH=$M2_HOME/bin:$HOME/Environment/racket/bin:$HOME/Dropbox/bin:$PATH:$GRADLE_HOME/bin:$DART_HOME/bin:$PLAY_HOME
+export SCALA_HOME=$HOME/Environment/tools/scala
+export PATH=$M2_HOME/bin:$HOME/Environment/racket/bin:$HOME/Dropbox/bin:$PATH:$GRADLE_HOME/bin:$DART_HOME/bin:$SCALA_HOME/bin:
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_17.jdk/Contents/Home
 
 ## Colors 
@@ -56,3 +56,5 @@ export HISTSIZE=10000
 export HISTFILESIZE=409600
 export HISTIGNORE="cd:ls:[bf]g:clear:exit:"
 export HISTCONTROL=ignoreups 
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
