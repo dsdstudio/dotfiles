@@ -5,13 +5,20 @@ if [ "$OS" == "Darwin" ]; then
 	alias ls='ls -G'
 fi
 
+function mf() {
+	unzip -p $1 META-INF/MANIFEST.MF
+}
+
 ## Aliases
 alias ll='ls -Gla'
 alias grep='grep --color'
 
 alias sl='open -a "Sublime Text 2"'
+alias mf=mf
 
 
 ## Personal Aliases 
 alias blog="cd ${HOME}/Dropbox/blog"
 alias bnd='java -jar ${HOME}/Dropbox/bin/bnd-1.50.0.jar'
+
+alias httpserv='python -m SimpleHTTPServer'
