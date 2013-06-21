@@ -48,6 +48,13 @@ defaults delete -g NSFullScreenDarkMenu
 # QuickLook 딜레이 없애기 
 defaults write -g QLPanelAnimationDuration -float 0
 
+# a,e 눌렀을때 대용문자 나오지않도록 처리   
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# 프리뷰 재개기능 해제 미리보기, Quicktime
+defaults write com.apple.Preview NSQuitAlwaysKeepsWindows -bool false
+defaults write com.apple.QuickTimePlayerX NSQuitAlwaysKeepsWindows -bool false
+
 ##############################
 # IO 관련  설정              #
 ##############################
