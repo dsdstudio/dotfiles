@@ -5,12 +5,13 @@ export LANG=ko_KR.UTF-8
 
 ## Path 
 export NVM_DIR=$HOME/.nvm
-export M2_HOME=/usr/share/maven
+export M2_HOME=$HOME/Environment/tools/mvn
 export GRADLE_HOME=$HOME/Environment/tools/gradle
-export DART_HOME=$HOME/Environment/tools/dart-sdk
 export SCALA_HOME=$HOME/Environment/tools/scala
-export PATH=$M2_HOME/bin:$HOME/Environment/racket/bin:$HOME/Dropbox/bin:$PATH:$GRADLE_HOME/bin:$DART_HOME/bin:$SCALA_HOME/bin:
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_17.jdk/Contents/Home
+export ANT_HOME=$HOME/Environment/tools/ant
+export ANDROID_HOME=$HOME/Environment/tools/adt/sdk
+export PATH=$M2_HOME/bin:$HOME/Environment/racket/bin:$HOME/Dropbox/bin:$PATH:$GRADLE_HOME/bin:$SCALA_HOME/bin:$ANT_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_05)
 
 ## Colors 
 _green=`tput setaf 2`
@@ -22,7 +23,9 @@ _sgr0=`tput sgr0`
 set -o vi
 
 # Prompt setting
-export PS1='\[${_green}\]\u\[${_sgr0}\]@\[${_yellow}\]\h\[${_sgr0}\] \w\[${_pink}\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[${c_g}\]``\[${_sgr0}\] \n  '
+export PS1='\[${_green}\]\u\[${_sgr0}\]@\[${_yellow}\]\h\[${_sgr0}\] \w\[${_pink}\]\[${c_g}\]\[${_sgr0}\] \n  '
+# vcprompt git repocheck 까지 하니까 너무 느려서 잠시 뺐음 
+#export PS1='\[${_green}\]\u\[${_sgr0}\]@\[${_yellow}\]\h\[${_sgr0}\] \w\[${_pink}\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[${c_g}\]``\[${_sgr0}\] \n  '
 
 # ls coloring for OSX Dark background 
 export LSCOLORS=dxfxcxdxbxegedabagacad
@@ -58,3 +61,9 @@ export HISTIGNORE="cd:ls:[bf]g:clear:exit:"
 export HISTCONTROL=ignoreups 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# The next line updates PATH for the Google Cloud SDK.
+source /Users/bhkim/google-cloud-sdk/path.bash.inc
+
+# The next line enables bash completion for gcloud.
+source /Users/bhkim/google-cloud-sdk/completion.bash.inc
