@@ -1,6 +1,6 @@
 [user]
 	email = dsdgun@gmail.com
-	name = 보롱킴
+	name = 보롱킴
 [color]
 	ui = auto
 
@@ -9,6 +9,15 @@
 	st = status
 	co = checkout
 	log-local = log --oneline origin..HEAD
+	sl = log --oneline
+	gl = log --graph 
 [core]
-	excludesfile = /Users/bhkim/.gitignore_g
+	excludesfile = /Users/bhkim/.gitignore_global
 	editor = vim
+	autocrlf = input
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

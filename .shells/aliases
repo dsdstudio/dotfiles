@@ -13,12 +13,11 @@ function mf() {
 alias ll='ls -Gla'
 alias grep='grep --color'
 
-alias sl='open -a "Sublime Text 2"'
 alias mf=mf
 
 
 ## Personal Aliases 
 alias blog="cd ${HOME}/Dropbox/blog"
 alias bnd='java -jar ${HOME}/Dropbox/bin/bnd-1.50.0.jar'
-
 alias httpserv='python -m SimpleHTTPServer'
+alias clj='java -jar ${HOME}/Dropbox/bin/clojure.jar'
