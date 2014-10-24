@@ -13,7 +13,7 @@ brew update && brew install git tmux mysql tree nginx bash bash-completion mercu
 brew install --HEAD vcprompt 
 
 ## nvm 
-(curl https://raw.github.com/creationix/nvm/master/install.sh | sh) || (wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh)
+curl https://raw.githubusercontent.com/creationix/nvm/v0.17.3/install.sh | bash
 
 . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
 
