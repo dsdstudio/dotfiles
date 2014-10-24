@@ -2,7 +2,7 @@
 # 초기화 선행조건 
 # Xcode command Line tools
 
-NODE_VERSION=0.8.16
+NODE_VERSION=0.10.32
 NVM_DIR=~/.nvm
 
 ## HomeBrew Base configurations 
