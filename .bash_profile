@@ -59,11 +59,3 @@ export HISTSIZE=10000
 export HISTFILESIZE=409600
 export HISTIGNORE="cd:ls:[bf]g:clear:exit:"
 export HISTCONTROL=ignoreups 
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# The next line updates PATH for the Google Cloud SDK.
-source /Users/bhkim/google-cloud-sdk/path.bash.inc
-
-# The next line enables bash completion for gcloud.
-source /Users/bhkim/google-cloud-sdk/completion.bash.inc
