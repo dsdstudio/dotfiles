@@ -52,14 +52,10 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-pathogen.git'
 Bundle 'Lokaltog/vim-powerline.git'
-
-
+Bundle 'pangloss/vim-javascript'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'mattn/emmet-vim'
 
 filetype plugin indent on     " required!
-
-" pathogen setting 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
