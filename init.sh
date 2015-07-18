@@ -2,19 +2,15 @@
 # 초기화 선행조건 
 # Xcode command Line tools
 
-NODE_VERSION=0.10.32
+NODE_VERSION=v0.12.7
 NVM_DIR=~/.nvm
 
-## HomeBrew Base configurations 
-ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
-
-brew update && brew install git tmux mysql tree nginx bash bash-completion mercurial phantomjs mobile-shell clojure leiningen
+brew update && brew install git tmux mysql tree nginx bash bash-completion phantomjs clojure leiningen
 # vcprompt => vcs info shell 표시용 프로그램 같은 옵션으로 설치불가능 
 brew install --HEAD vcprompt 
 
 ## nvm 
-curl https://raw.githubusercontent.com/creationix/nvm/v0.17.3/install.sh | bash
-
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
 . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
 
 # Mac Keybindings for Home, end, pageup pagedown 
