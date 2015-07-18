@@ -11,7 +11,7 @@ export SCALA_HOME=$HOME/Environment/tools/scala
 export ANT_HOME=$HOME/Environment/tools/ant
 export ANDROID_HOME=$HOME/Environment/tools/adt/sdk
 export PATH=$M2_HOME/bin:$HOME/Environment/racket/bin:$HOME/Dropbox/bin:$PATH:$GRADLE_HOME/bin:$SCALA_HOME/bin:$ANT_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_05)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 ## Colors 
 _green=`tput setaf 2`
