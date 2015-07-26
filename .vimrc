@@ -45,17 +45,20 @@ set laststatus=2
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-Bundle 'Lokaltog/vim-powerline.git'
-Bundle 'pangloss/vim-javascript'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'mattn/emmet-vim'
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'Lokaltog/vim-powerline.git'
+Plugin 'pangloss/vim-javascript'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
+call vundle#end()
 
 filetype plugin indent on     " required!
