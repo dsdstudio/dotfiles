@@ -13,3 +13,4 @@ ln -sf $HOME/Dropbox/dotfiles/.gitconfig $HOME/.gitconfig
 ln -sf $HOME/Dropbox/dotfiles/.shells $HOME/.shells
 ln -sf $HOME/Dropbox/dotfiles/.vim $HOME/.vim
 ln -sf $HOME/Dropbox/dotfiles/.vimrc $HOME/.vimrc
+ln -sf $HOME/Dropbox/dotfiles/.tmux.conf $HOME/.tmux.conf
