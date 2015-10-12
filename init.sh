@@ -5,12 +5,12 @@
 NODE_VERSION=v0.12.7
 NVM_DIR=~/.nvm
 
-brew update && brew install git tmux mysql tree nginx bash bash-completion phantomjs clojure leiningen
+brew update && brew install git tmux mysql tree nginx bash bash-completion phantomjs leiningen
 # vcprompt => vcs info shell 표시용 프로그램 같은 옵션으로 설치불가능 
 brew install --HEAD vcprompt 
 
 ## nvm 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
 
 # Mac Keybindings for Home, end, pageup pagedown 
