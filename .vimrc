@@ -53,6 +53,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'Lokaltog/vim-powerline.git'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'mattn/emmet-vim'
