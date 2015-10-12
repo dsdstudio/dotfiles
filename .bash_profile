@@ -23,9 +23,7 @@ _sgr0=`tput sgr0`
 set -o vi
 
 # Prompt setting
-export PS1='\[${_green}\]\u\[${_sgr0}\]@\[${_yellow}\]\h\[${_sgr0}\] \w\[${_pink}\]\[${c_g}\]\[${_sgr0}\] \n  '
-# vcprompt git repocheck 까지 하니까 너무 느려서 잠시 뺐음 
-#export PS1='\[${_green}\]\u\[${_sgr0}\]@\[${_yellow}\]\h\[${_sgr0}\] \w\[${_pink}\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[${c_g}\]``\[${_sgr0}\] \n  '
+export PS1='\[${_green}\]\u\[${_sgr0}\]@\[${_yellow}\]\h\[${_sgr0}\] \w\[${_pink}\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[${c_g}\]``\[${_sgr0}\] \n  '
 
 # ls coloring for OSX Dark background 
 export LSCOLORS=dxfxcxdxbxegedabagacad
