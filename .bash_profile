@@ -10,7 +10,7 @@ export GRADLE_HOME=$HOME/Environment/tools/gradle
 export SCALA_HOME=$HOME/Environment/tools/scala
 export ANT_HOME=$HOME/Environment/tools/ant
 export ANDROID_HOME=$HOME/Environment/tools/adt/sdk
-export PATH=$M2_HOME/bin:$HOME/Environment/racket/bin:$HOME/Dropbox/bin:$PATH:$GRADLE_HOME/bin:$SCALA_HOME/bin:$ANT_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:
+export PATH=$HOME/.cask/bin:$M2_HOME/bin:$HOME/Environment/racket/bin:$HOME/Dropbox/bin:$PATH:$GRADLE_HOME/bin:$SCALA_HOME/bin:$ANT_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 ## Colors 
@@ -23,7 +23,7 @@ _sgr0=`tput sgr0`
 set -o vi
 
 # Prompt setting
-export PS1='\[${_green}\]\u\[${_sgr0}\]@\[${_yellow}\]\h\[${_sgr0}\] \w\[${_pink}\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[${c_g}\]``\[${_sgr0}\] \n  '
+export PS1='\[${_green}\]\u\[${_sgr0}\]@\[${_yellow}\]\h\[${_sgr0}\] \w\[${_pink}\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[${c_g}\]``\[${_sgr0}\] λ '
 
 # ls coloring for OSX Dark background 
 export LSCOLORS=dxfxcxdxbxegedabagacad

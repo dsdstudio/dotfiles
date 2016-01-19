@@ -5,7 +5,7 @@
 NODE_VERSION=v0.12.7
 NVM_DIR=~/.nvm
 
-brew update && brew install git tmux mysql tree nginx bash bash-completion phantomjs leiningen
+brew update && brew install git tmux mysql tree nginx bash bash-completion phantomjs leiningen cask
 # vcprompt => vcs info shell 표시용 프로그램 같은 옵션으로 설치불가능 
 brew install --HEAD vcprompt 
 
