@@ -17,13 +17,14 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 _green=`tput setaf 2`
 _yellow=`tput setaf 3`
 _pink=`tput setaf 5`
+_red=`tput setaf 1`
 _sgr0=`tput sgr0`
 
 # use vim syntax in commandline 
 set -o vi
 
 # Prompt setting
-export PS1='\[${_green}\]\u\[${_sgr0}\]@\[${_yellow}\]\h\[${_sgr0}\] \w\[${_pink}\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt)"; fi`\[${c_g}\]``\[${_sgr0}\] λ '
+export PS1='\w\[${_red}\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt -f %b)"; fi`\[${c_g}\]``\[${_sgr0}\] λ '
 
 # ls coloring for OSX Dark background 
 export LSCOLORS=dxfxcxdxbxegedabagacad
