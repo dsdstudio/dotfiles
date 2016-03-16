@@ -24,7 +24,7 @@ _sgr0=`tput sgr0`
 set -o vi
 
 # Prompt setting
-export PS1='\w\[${_red}\]`if [ "$(vcprompt)" != "" ]; then echo " $(vcprompt -f %b)"; fi`\[${c_g}\]``\[${_sgr0}\] λ '
+export PS1='\[${_red}\]`if [ "$(vcprompt)" != "" ]; then echo "• $(vcprompt -f %b%m)"; fi`\[${c_g}\]``\[${_sgr0}\] \w λ '
 
 # ls coloring for OSX Dark background 
 export LSCOLORS=dxfxcxdxbxegedabagacad
