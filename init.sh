@@ -2,7 +2,7 @@
 # 초기화 선행조건 
 # Xcode command Line tools
 
-NODE_VERSION=v0.12.7
+NODE_VERSION=v5.9.0
 NVM_DIR=~/.nvm
 
 brew update && brew install git tmux mysql tree nginx bash bash-completion phantomjs leiningen cask
