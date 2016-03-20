@@ -1,6 +1,7 @@
 set nocompatible 
 set cindent     
 set smartindent 
+set smarttab
 set nobackup	
 set incsearch		" do incremental searching
 set showmatch	        " see matches on {} and ()
@@ -55,11 +56,11 @@ Plugin 'Lokaltog/vim-powerline.git'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'L9'
-Plugin 'FuzzyFinder'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
+Plugin 'vim-scripts/FuzzyFinder'
 call vundle#end()
 
 filetype plugin indent on     " required!
