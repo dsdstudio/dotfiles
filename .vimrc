@@ -45,7 +45,7 @@ set laststatus=2
 " vundle settings
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'gmarik/vundle'
@@ -61,6 +61,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'vim-scripts/FuzzyFinder'
+Plugin 'isRuslan/vim-es6'
 call vundle#end()
 
 filetype plugin indent on     " required!
