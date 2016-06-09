@@ -38,23 +38,25 @@ syntax on
 
 " powerline settings
 language en_US.UTF-8
-let g:Powerline_symbols = 'fancy'
 set laststatus=2
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
 
+if has("gui_running")
+   let s:uname = system("uname")
+   if s:uname == "Darwin\n"
+      set guifont=Meslo\ LG\ S\ for\ Powerline
+   endif
+endif
 
 " vundle settings
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'Lokaltog/vim-powerline.git'
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
 Plugin 'L9'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-fireplace'
@@ -62,6 +64,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'vim-scripts/FuzzyFinder'
 Plugin 'isRuslan/vim-es6'
+Plugin 'SilVer/ultisnips'
 call vundle#end()
 
 filetype plugin indent on     " required!
