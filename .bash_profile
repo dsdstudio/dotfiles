@@ -9,7 +9,7 @@ export M2_HOME=$HOME/Environment/tools/mvn
 export GRADLE_HOME=$HOME/Environment/tools/gradle
 export SCALA_HOME=$HOME/Environment/tools/scala
 export ANT_HOME=$HOME/Environment/tools/ant
-export ANDROID_HOME=$HOME/Environment/tools/adt
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$HOME/.cask/bin:$M2_HOME/bin:$HOME/Environment/racket/bin:$HOME/Dropbox/bin:$PATH:$GRADLE_HOME/bin:$SCALA_HOME/bin:$ANT_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
@@ -46,6 +46,10 @@ LP="${BP}lib/node_modules"
 export NODE_PATH=$LP
 
 
+# bash powerline
+if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh ]; then
+   	source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+fi
 
 ## specific settings
 source ~/.shells/aliases
