@@ -8,9 +8,11 @@
 # TODO 1. file check routine 
 # TODO 2. 이미 파일이 있는경우 처리 루틴 
 
-ln -sf $HOME/Dropbox/dotfiles/.bash_profile $HOME/.bash_profile
-ln -sf $HOME/Dropbox/dotfiles/.gitconfig $HOME/.gitconfig
-ln -sf $HOME/Dropbox/dotfiles/.shells $HOME/.shells
-ln -sf $HOME/Dropbox/dotfiles/.vim $HOME/.vim
-ln -sf $HOME/Dropbox/dotfiles/.vimrc $HOME/.vimrc
-ln -sf $HOME/Dropbox/dotfiles/.tmux.conf $HOME/.tmux.conf
+BASE_DIR=$HOME/Dropbox/dotfiles
+
+ln -sf $BASE_DIR/.bash_profile $HOME/.bash_profile
+ln -sf $BASE_DIR/.gitconfig $HOME/.gitconfig
+ln -sf $BASE_DIR/.shells $HOME/.shells
+ln -sf $BASE_DIR/.vim $HOME/.vim
+ln -sf $BASE_DIR/.vimrc $HOME/.vimrc
+ln -sf $BASE_DIR/.tmux.conf $HOME/.tmux.conf
