@@ -2,10 +2,10 @@
 # 초기화 선행조건 
 # Xcode command Line tools
 
-NODE_VERSION=v5.9.0
+NODE_VERSION=v4.4.5
 NVM_DIR=~/.nvm
 
-brew update && brew install git tmux mysql tree nginx bash bash-completion phantomjs leiningen cask
+brew update && brew install git tmux tree bash bash-completion leiningen
 # vcprompt => vcs info shell 표시용 프로그램 같은 옵션으로 설치불가능 
 brew install --HEAD vcprompt 
 
