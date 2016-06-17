@@ -9,6 +9,9 @@
 			   cider
 			   magit
 			   auto-complete
+			   company
+			   emmet-mode
+			   neotree
 			   markdown-mode))
 
 (dolist (pkg dsdstudio/packages)
@@ -17,6 +20,7 @@
 
 (add-hook 'after-init-hook
 	  (lambda () (load-theme 'monokai t) (global-linum-mode 1)))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
