@@ -12,6 +12,7 @@
 			   company
 			   emmet-mode
 			   neotree
+         ac-js2
 			   markdown-mode))
 
 (dolist (pkg dsdstudio/packages)
@@ -19,7 +20,9 @@
     (package-install pkg)))
 
 (add-hook 'after-init-hook
-	  (lambda () (load-theme 'monokai t) (global-linum-mode 1)))
+          (lambda () (load-theme 'monokai t) (global-linum-mode 1)))
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+(add-hook 'js-mode-hook 'js2-minor-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
