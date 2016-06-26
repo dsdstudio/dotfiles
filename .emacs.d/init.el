@@ -12,6 +12,7 @@
 			   company
 			   emmet-mode
 			   neotree
+			   fiplr
 			   ac-js2
 			   markdown-mode))
 
