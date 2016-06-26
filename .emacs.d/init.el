@@ -14,6 +14,9 @@
 			   neotree
 			   fiplr
 			   ac-js2
+			   js2-mode
+			   web-mode
+			   flycheck
 			   markdown-mode))
 
 (dolist (pkg dsdstudio/packages)
@@ -25,9 +28,9 @@
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 (add-hook 'js-mode-hook 'js2-minor-mode)
 
-(setq fiplr-root-markers'(".git" ".svn"))
+(setq fiplr-root-markers '(".git" ".svn"))
 (setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules" "bower_components"))
-			    (files ("*.jpg" "*.png", "*.zip" "*.tar.gz" "*.~"))
+			    (files ("*.jpg" "*.png" "*.zip" "*.tar.gz" "*.~"))))
 (global-set-key (kbd "C-x f") 'fiplr-find-file)
 
 (custom-set-variables
