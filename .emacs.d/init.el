@@ -29,7 +29,7 @@
 (add-hook 'js-mode-hook 'js2-minor-mode)
 
 (setq fiplr-root-markers '(".git" ".svn"))
-(setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules" "bower_components"))
+(setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules" "bower_components" "target"))
 			    (files ("*.jpg" "*.png" "*.zip" "*.tar.gz" "*.~"))))
 (global-set-key (kbd "C-x f") 'fiplr-find-file)
 
