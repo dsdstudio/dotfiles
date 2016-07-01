@@ -2,7 +2,7 @@
 # 초기화 선행조건 
 # Xcode command Line tools
 
-NODE_VERSION=v4.4.5
+NODE_VERSION=v6.2.2
 NVM_DIR=~/.nvm
 
 brew update && brew install git tmux tree bash bash-completion leiningen
