@@ -5,19 +5,19 @@
 (package-initialize)
 
 (setq dsdstudio/packages '(clojure-mode
-			   monokai-theme
-			   cider
-			   magit
-			   auto-complete
-			   company
-			   emmet-mode
-			   neotree
-			   fiplr
-			   ac-js2
-			   js2-mode
-			   web-mode
-			   flycheck
-			   markdown-mode))
+               monokai-theme
+               cider
+               magit
+               auto-complete
+               company
+               emmet-mode
+               neotree
+               fiplr
+               ac-js2
+               js2-mode
+               web-mode
+               flycheck
+               markdown-mode))
 
 (dolist (pkg dsdstudio/packages)
   (when (not (package-installed-p pkg))
@@ -30,8 +30,14 @@
 
 (setq fiplr-root-markers '(".git" ".svn"))
 (setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules" "bower_components" "target"))
-			    (files ("*.jpg" "*.png" "*.zip" "*.tar.gz" "*.~"))))
+                            (files ("*.jpg" "*.png" "*.zip" "*.tar.gz" "*.~"))))
 (global-set-key (kbd "C-x f") 'fiplr-find-file)
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
