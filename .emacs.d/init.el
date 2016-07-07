@@ -13,10 +13,12 @@
                emmet-mode
                neotree
                fiplr
+               helm
                ac-js2
                js2-mode
                web-mode
                flycheck
+               indent-guide
                markdown-mode))
 
 (dolist (pkg dsdstudio/packages)
@@ -33,10 +35,14 @@
                             (files ("*.jpg" "*.png" "*.zip" "*.tar.gz" "*.~"))))
 (global-set-key (kbd "C-x f") 'fiplr-find-file)
 
+; 명령 모드일때 helm 자동완성의 지원을 받을수 있도록 
+(global-set-key (kbd "M-x") 'helm-M-x)
+
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
-
+(require 'indent-guide)
+(set-face-background 'indent-guide-face "dimgray")
 
 
 (custom-set-variables
