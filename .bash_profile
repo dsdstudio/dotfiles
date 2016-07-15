@@ -30,7 +30,9 @@ export PS1='\[${_red}\]`if [ "$(vcprompt)" != "" ]; then echo "• $(vcprompt -f
 export LSCOLORS=dxfxcxdxbxegedabagacad
 
 # bash completion 
-source /usr/local/etc/bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
+fi
 
 # http://feeds.macosxhints.com/~r/macosxhints/recent/~3/257065700/article.php
 complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
@@ -62,3 +64,4 @@ export HISTSIZE=10000
 export HISTFILESIZE=409600
 export HISTIGNORE="cd:ls:[bf]g:clear:exit:"
 export HISTCONTROL=ignoreups 
+export PATH=$PATH:~/.nexustools
