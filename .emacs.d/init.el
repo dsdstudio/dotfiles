@@ -40,6 +40,9 @@
 ; 명령 모드일때 helm 자동완성의 지원을 받을수 있도록
 (global-set-key (kbd "M-x") 'helm-M-x)
 
+; 버퍼 찾기시 helm의 buffer 찾기를 사용하도록
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+
 ; tab size space 4
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
