@@ -55,6 +55,7 @@
 (setq web-mode-style-padding 0)
 (setq web-mode-script-padding 0)
 
+(global-whitespace-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
