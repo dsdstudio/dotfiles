@@ -18,7 +18,6 @@
                js2-mode
                web-mode
                flycheck
-               indent-guide
                markdown-mode))
 
 (dolist (pkg dsdstudio/packages)
@@ -46,10 +45,6 @@
 ; tab size space 4
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
-
-; indent-guide
-(require 'indent-guide)
-(set-face-background 'indent-guide-face "dimgray")
 
 ; web-mode 관련 설정
 (require 'web-mode)
