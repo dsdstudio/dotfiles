@@ -12,7 +12,6 @@
                company
                emmet-mode
                neotree
-               fiplr
                helm
                ac-js2
                js2-mode
@@ -29,12 +28,6 @@
           (lambda () (load-theme 'monokai t) (global-linum-mode 1)))
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 (add-hook 'js-mode-hook 'js2-minor-mode)
-
-; fuzzy search 관련 ignore 디렉토리 및 확장자
-(setq fiplr-root-markers '(".git" ".svn"))
-(setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules" "bower_components" "target"))
-                            (files ("*.jpg" "*.png" "*.zip" "*.tar.gz" "*.~"))))
-(global-set-key (kbd "C-x f") 'fiplr-find-file)
 
 ; 명령 모드일때 helm 자동완성의 지원을 받을수 있도록
 (global-set-key (kbd "M-x") 'helm-M-x)
