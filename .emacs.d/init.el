@@ -13,6 +13,7 @@
                emmet-mode
                neotree
                helm
+               helm-ls-git
                ac-js2
                js2-mode
                web-mode
@@ -32,6 +33,8 @@
 ; 명령 모드일때 helm 자동완성의 지원을 받을수 있도록
 (global-set-key (kbd "M-x") 'helm-M-x)
 
+; git repository에서 fuzzy search 되도록 
+(global-set-key (kbd "C-x f") 'helm-ls-git-ls)
 ; 버퍼 찾기시 helm의 buffer 찾기를 사용하도록
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 
@@ -46,6 +49,9 @@
 
 (setq web-mode-style-padding 0)
 (setq web-mode-script-padding 0)
+
+(setq helm-ff-transformer-show-only-basename nil
+            helm-ls-git-show-abs-or-relative 'relative)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
