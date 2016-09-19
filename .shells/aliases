@@ -25,4 +25,4 @@ alias clj='java -jar ${HOME}/Dropbox/bin/clojure.jar'
 
 ## docker Aliases 
 
-alias dk-rmi-unused='docker rmi $(docker images -a --filter=dangling=true)'
+alias dk-rmi-unused='docker rmi $(docker images -a -q --filter=dangling=true)'
