@@ -14,6 +14,7 @@
                neotree
                helm
                helm-ls-git
+               helm-ag
                ac-js2
                js2-mode
                web-mode
@@ -54,6 +55,9 @@
             helm-ls-git-show-abs-or-relative 'relative)
 
 (custom-set-variables
+ '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
+ '(helm-ag-command-option "--all-text")
+ '(helm-ag-insert-at-point 'symbol)
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
