@@ -55,16 +55,19 @@
             helm-ls-git-show-abs-or-relative 'relative)
 
 (custom-set-variables
- '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
- '(helm-ag-command-option "--all-text")
- '(helm-ag-insert-at-point 'symbol)
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("561ba4316ba42fe75bc07a907647caa55fc883749ee4f8f280a29516525fc9e8" default))))
+    ("561ba4316ba42fe75bc07a907647caa55fc883749ee4f8f280a29516525fc9e8" default)))
+ '(helm-ag-base-command "/usr/local/bin/ag --nocolor --nogroup --ignore-case")
+ '(helm-ag-command-option "--all-text")
+ '(helm-ag-insert-at-point (quote symbol))
+ '(package-selected-packages
+   (quote
+    (xwidgete yaml-mode web-mode sass-mode powerline org-blog neotree monokai-theme markdown-preview-mode magit jsx-mode indent-guide helm-ls-git helm-ag grizzl flycheck emmet-mode dockerfile-mode cyberpunk-theme company color-theme-monokai cider auto-complete ac-js2))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
