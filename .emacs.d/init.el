@@ -65,9 +65,6 @@
  '(helm-ag-base-command "/usr/local/bin/ag --nocolor --nogroup --ignore-case")
  '(helm-ag-command-option "--all-text")
  '(helm-ag-insert-at-point (quote symbol))
- '(package-selected-packages
-   (quote
-    (xwidgete yaml-mode web-mode sass-mode powerline org-blog neotree monokai-theme markdown-preview-mode magit jsx-mode indent-guide helm-ls-git helm-ag grizzl flycheck emmet-mode dockerfile-mode cyberpunk-theme company color-theme-monokai cider auto-complete ac-js2))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
