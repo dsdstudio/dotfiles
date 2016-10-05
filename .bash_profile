@@ -5,15 +5,11 @@ export LANG=ko_KR.UTF-8
 
 ## Path 
 export NVM_DIR=$HOME/.nvm
-export M2_HOME=$HOME/Environment/tools/mvn
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$HOME/.cask/bin:$M2_HOME/bin:$HOME/Dropbox/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 ## Colors 
-_green=`tput setaf 2`
-_yellow=`tput setaf 3`
-_pink=`tput setaf 5`
 _red=`tput setaf 1`
 _sgr0=`tput sgr0`
 
