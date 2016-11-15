@@ -53,6 +53,7 @@
 
 (setq helm-ff-transformer-show-only-basename nil
             helm-ls-git-show-abs-or-relative 'relative)
+(setq helm-ag-base-command "/usr/local/bin/ag --nocolor --nogroup --ignore-case")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -62,7 +63,6 @@
  '(custom-safe-themes
    (quote
     ("561ba4316ba42fe75bc07a907647caa55fc883749ee4f8f280a29516525fc9e8" default)))
- '(helm-ag-base-command "/usr/local/bin/ag --nocolor --nogroup --ignore-case")
  '(helm-ag-command-option "--all-text")
  '(helm-ag-insert-at-point (quote symbol))
 (custom-set-faces
