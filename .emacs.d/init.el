@@ -19,8 +19,8 @@
                js2-mode
                web-mode
                flycheck
-			   minimap
-               markdown-mode))
+               markdown-mode
+			   minimap))
 
 (dolist (pkg dsdstudio/packages)
   (when (not (package-installed-p pkg))
