@@ -26,8 +26,8 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 source ~/.nvm/nvm.sh
 
 # bash completion 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-	. $(brew --prefix)/etc/bash_completion
+if [ -f /usr/local/etc/bash_completion ]; then
+	. /usr/local/etc/bash_completion
 fi
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
