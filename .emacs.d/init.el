@@ -13,6 +13,7 @@
                emmet-mode
                neotree
                helm
+               helm-projectile
                helm-ls-git
                helm-ag
                ac-js2
@@ -36,7 +37,7 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 
 ; git repository에서 fuzzy search 되도록 
-(global-set-key (kbd "C-x f") 'helm-ls-git-ls)
+(global-set-key (kbd "C-x f") 'helm-projectile)
 ; 버퍼 찾기시 helm의 buffer 찾기를 사용하도록
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 
