@@ -19,6 +19,7 @@
                ac-js2
                js2-mode
                web-mode
+			   gradle-mode
                flycheck
                markdown-mode
 			   minimap))
