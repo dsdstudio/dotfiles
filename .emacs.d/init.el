@@ -5,9 +5,9 @@
 (package-refresh-contents)
 
 (setq dsdstudio/packages '(clojure-mode
-               monokai-theme
                cider
                magit
+               doom-themes
                auto-complete
                company
                emmet-mode
@@ -27,10 +27,27 @@
 (dolist (pkg dsdstudio/packages)
   (when (not (package-installed-p pkg))
     (package-install pkg)))
+(require 'doom-themes)
+(require 'doom-neotree)
+(require 'doom-nlinum)
 
-; 초기 설정
+(setq doom-enable-bold t    ; if nil, bolding are universally disabled
+      doom-enable-italic t  ; if nil, italics are universally disabled
+
+      ;; doom-one specific settings
+      doom-one-brighter-modeline nil
+      doom-one-brighter-comments nil
+      )
+
+;;; OPTIONAL
+;; brighter source buffers
+(add-hook 'find-file-hook 'doom-buffer-mode)
+;; brighter minibuffer when active
+(add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)
+
+;; 초기 설정
 (add-hook 'after-init-hook
-          (lambda () (load-theme 'monokai t) (global-linum-mode 1)))
+          (lambda () (load-theme 'doom-one t) (global-linum-mode 1)))
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 (add-hook 'js-mode-hook 'js2-minor-mode)
 
