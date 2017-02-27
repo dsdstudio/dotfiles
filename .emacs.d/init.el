@@ -73,6 +73,11 @@
 ;; 버퍼 찾기시 helm의 buffer 찾기를 사용하도록
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 
+(require 'multiple-cursors)
+;; multiple 커서 단축키 등록
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 ;; tab size space 4
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
