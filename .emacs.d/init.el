@@ -61,7 +61,6 @@
  'org-babel-load-languages
  '((emacs-lisp . t)
    (C . t)
-   (cpp . t)
    (clojure . t)
    (shell . t)))
 
