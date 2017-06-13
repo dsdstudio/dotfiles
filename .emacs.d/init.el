@@ -35,7 +35,6 @@
 
 (require 'all-the-icons)
 (require 'doom-themes)
-(require 'doom-nlinum)
 
 (setq doom-enable-bold t    ; if nil, bolding are universally disabled
       doom-enable-italic t  ; if nil, italics are universally disabled
