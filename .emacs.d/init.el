@@ -35,7 +35,6 @@
 
 (require 'all-the-icons)
 (require 'doom-themes)
-(require 'doom-neotree)
 (require 'doom-nlinum)
 
 (setq doom-enable-bold t    ; if nil, bolding are universally disabled
@@ -63,12 +62,15 @@
    (C . t)
    (clojure . t)
    (shell . t)))
+(setq org-todo-keywords
+  '((sequence "할일" "진행중" "완료")))
+
 
 ;; 명령 모드일때 helm 자동완성의 지원을 받을수 있도록
 (global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; git repository에서 fuzzy search 되도록 
-(global-set-key (kbd "C-x f") 'helm-projectile)
+(global-set-key (kbd "C-x f") 'helm-ls-git-ls)
 ;; 버퍼 찾기시 helm의 buffer 찾기를 사용하도록
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 
