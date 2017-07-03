@@ -33,21 +33,13 @@
   (when (not (package-installed-p pkg))
     (package-install pkg)))
 
-(require 'all-the-icons)
 (require 'doom-themes)
 
 (setq doom-enable-bold t    ; if nil, bolding are universally disabled
-      doom-enable-italic t  ; if nil, italics are universally disabled
+      doom-enable-italic t)  ; if nil, italics are universally disabled
 
-       ;; doom-one specific settings
-      doom-one-brighter-modeline nil
-      doom-one-brighter-comments nil
-      )
-;; brighter source buffers
-(add-hook 'find-file-hook 'doom-buffer-mode)
-;; brighter minibuffer when active
-(add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)
-
+(doom-themes-visual-bell-config)
+(doom-themes-neotree-config)
 ;; 초기 설정
 (add-hook 'after-init-hook
           (lambda () (load-theme 'doom-one t) (global-linum-mode 1)))
@@ -94,3 +86,17 @@
             helm-ls-git-show-abs-or-relative 'relative)
 (setq helm-ag-base-command "/usr/local/bin/ag --nocolor --nogroup --ignore-case")
 (put 'upcase-region 'disabled nil)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (yaml-mode xwidgete websocket web-server web-mode uuidgen solaire-mode sass-mode powerline org-plus-contrib org-blog ob-go ob-diagrams neotree multiple-cursors minimap markdown-mode magit jsx-mode indent-guide helm-projectile helm-ls-git helm-ag gradle-mode fzf flycheck face-remap+ emmet-mode doom-themes dockerfile-mode company color-theme-monokai cider auto-complete all-the-icons-dired ac-js2))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
