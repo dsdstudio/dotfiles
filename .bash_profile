@@ -3,6 +3,9 @@
 ## Language setting 
 export LANG=ko_KR.UTF-8
 
+## EDITOR
+export EDITOR='vim'
+
 ## Path 
 export NVM_DIR=$HOME/.nvm
 export ANDROID_HOME=$HOME/Library/Android/sdk
