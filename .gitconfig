@@ -11,6 +11,9 @@
 	log-local = log --oneline origin..HEAD
 	sl = log --oneline
 	gl = log --graph 
+	stsh = stash
+	stash = stash --include-untracked
+	staash = stash --all
 [core]
 	excludesfile = /Users/bhkim/.gitignore_global
 	editor = vim
