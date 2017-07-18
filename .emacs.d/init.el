@@ -56,6 +56,17 @@
 (setq org-todo-keywords
   '((sequence "할일" "진행중" "완료")))
 
+;; clojure cider 관련 설정
+(global-company-mode)
+(add-hook 'cider-repl-mode-hook #'company-mode)
+(add-hook 'cider-mode-hook #'company-mode)
+
+
+(global-set-key (kbd "M-TAB") #'company-complete)
+
+;; 퍼지 자동완성 설정
+(add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
+(add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
 
 ;; 명령 모드일때 helm 자동완성의 지원을 받을수 있도록
 (global-set-key (kbd "M-x") 'helm-M-x)
