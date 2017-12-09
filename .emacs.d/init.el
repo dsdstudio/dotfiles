@@ -3,7 +3,6 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) 
 (package-initialize)
-(package-refresh-contents)
 
 (setq dsdstudio/packages
       '(org
@@ -55,6 +54,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
+   (kotlin . t)
    (C . t)
    (clojure . t)
    (shell . t)))
@@ -77,7 +77,7 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; git repository에서 fuzzy search 되도록 
-(global-set-key (kbd "C-x f") 'projectile-find-file)
+(global-set-key (kbd "C-x f") 'fzf-git)
 ;; 버퍼 찾기시 helm의 buffer 찾기를 사용하도록
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 
@@ -125,7 +125,7 @@
  '(org-fontify-whole-heading-line t)
  '(package-selected-packages
    (quote
-    (exec-path-from-shell parinfer inf-clojure typescript-mode swift-mode actionscript-mode ag yaml-mode xwidgete websocket web-server web-mode uuidgen solaire-mode sass-mode powerline org-plus-contrib org-blog ob-go ob-diagrams neotree multiple-cursors minimap markdown-mode magit jsx-mode indent-guide helm-projectile helm-ls-git helm-ag gradle-mode fzf flycheck face-remap+ emmet-mode doom-themes dockerfile-mode company color-theme-monokai cider auto-complete all-the-icons-dired ac-js2)))
+    (ob-browser flycheck-kotlin kotlin-mode ob-kotlin exec-path-from-shell parinfer inf-clojure typescript-mode swift-mode actionscript-mode ag yaml-mode xwidgete websocket web-server web-mode uuidgen solaire-mode sass-mode powerline org-plus-contrib org-blog ob-go ob-diagrams neotree multiple-cursors minimap markdown-mode magit jsx-mode indent-guide helm-projectile helm-ls-git helm-ag gradle-mode fzf flycheck face-remap+ emmet-mode doom-themes dockerfile-mode company color-theme-monokai cider auto-complete all-the-icons-dired ac-js2)))
  '(vc-annotate-background "#1B2229")
  '(vc-annotate-color-map
    (list
