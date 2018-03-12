@@ -31,6 +31,7 @@ source ~/.nvm/nvm.sh
 ## rbenv
 
 eval "$(rbenv init -)"
+rbenv global 2.4.2
 rbenv rehash 
 # bash completion 
 if [ -f /usr/local/etc/bash_completion ]; then
