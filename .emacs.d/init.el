@@ -94,6 +94,11 @@
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+(setq web-mode-extra-snippets
+      '(("erb" . (("errender" . "<%= | %>")))))
 
 ;; emmet-mode 설정. webmode가 켜지면 emmet-mode도 같이 적용되도록 ..
 (require 'emmet-mode)
@@ -113,9 +118,10 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#1B2229" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#DFDFDF"])
+ '(cider-boot-parameters "repl -s -H :: wait")
  '(custom-safe-themes
    (quote
-    ("10e3d04d524c42b71496e6c2e770c8e18b153fcfcc838947094dad8e5aa02cef" "9f569b5e066dd6ca90b3578ff46659bc09a8764e81adf6265626d7dc0fac2a64" default)))
+    ("2af26301bded15f5f9111d3a161b6bfb3f4b93ec34ffa95e42815396da9cb560" "0a3a41085c19d8121ed0ad3eb658a475ccb948a70a83604641ee7d4c3575a4d5" "a7e7804313dbf827a441c86a8109ef5b64b03011383322cbdbf646eb02692f76" "10e3d04d524c42b71496e6c2e770c8e18b153fcfcc838947094dad8e5aa02cef" "9f569b5e066dd6ca90b3578ff46659bc09a8764e81adf6265626d7dc0fac2a64" default)))
  '(fci-rule-color "#5B6268")
  '(jdee-db-active-breakpoint-face-colors (cons "#1B2229" "#51afef"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#1B2229" "#98be65"))
@@ -125,26 +131,26 @@
  '(org-fontify-whole-heading-line t)
  '(package-selected-packages
    (quote
-    (ob-browser flycheck-kotlin kotlin-mode ob-kotlin exec-path-from-shell parinfer inf-clojure typescript-mode swift-mode actionscript-mode ag yaml-mode xwidgete websocket web-server web-mode uuidgen solaire-mode sass-mode powerline org-plus-contrib org-blog ob-go ob-diagrams neotree multiple-cursors minimap markdown-mode magit jsx-mode indent-guide helm-projectile helm-ls-git helm-ag gradle-mode fzf flycheck face-remap+ emmet-mode doom-themes dockerfile-mode company color-theme-monokai cider auto-complete all-the-icons-dired ac-js2)))
+    (yasnippet-snippets ob-browser flycheck-kotlin kotlin-mode ob-kotlin exec-path-from-shell parinfer inf-clojure typescript-mode swift-mode actionscript-mode ag yaml-mode xwidgete websocket web-server web-mode uuidgen solaire-mode sass-mode powerline org-plus-contrib org-blog ob-go ob-diagrams neotree multiple-cursors minimap markdown-mode magit jsx-mode indent-guide helm-projectile helm-ls-git helm-ag gradle-mode fzf flycheck face-remap+ emmet-mode doom-themes dockerfile-mode company color-theme-monokai cider auto-complete all-the-icons-dired ac-js2)))
  '(vc-annotate-background "#1B2229")
  '(vc-annotate-color-map
    (list
     (cons 20 "#98be65")
-    (cons 40 "#b4be6c")
-    (cons 60 "#d0be73")
+    (cons 40 "#afaf6c")
+    (cons 60 "#d7af79")
     (cons 80 "#ECBE7B")
-    (cons 100 "#e6ab6a")
-    (cons 120 "#e09859")
+    (cons 100 "#f1a179")
+    (cons 120 "#e4946c")
     (cons 140 "#da8548")
-    (cons 160 "#d38079")
-    (cons 180 "#cc7cab")
+    (cons 160 "#d78787")
+    (cons 180 "#d787af")
     (cons 200 "#c678dd")
-    (cons 220 "#d974b7")
-    (cons 240 "#ec7091")
+    (cons 220 "#e479af")
+    (cons 240 "#f16c87")
     (cons 260 "#ff6c6b")
-    (cons 280 "#cf6162")
-    (cons 300 "#9f585a")
-    (cons 320 "#6f4e52")
+    (cons 280 "#bf5f5f")
+    (cons 300 "#7f5f5f")
+    (cons 320 "#3f5f5f")
     (cons 340 "#5B6268")
     (cons 360 "#5B6268")))
  '(vc-annotate-very-old-color nil))
