@@ -10,7 +10,7 @@ export EDITOR='vim'
 export NVM_DIR=$HOME/.nvm
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:
-export JAVA_HOME=$(/usr/libexec/java_home -v 9)
+export JAVA_HOME=$(/usr/libexec/java_home -v 10)
 
 ## Colors 
 _red=`tput setaf 1`
