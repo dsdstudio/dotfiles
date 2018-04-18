@@ -1,9 +1,6 @@
 #!/bin/bash 
 
-## Language setting 
 export LANG=ko_KR.UTF-8
-
-## EDITOR
 export EDITOR='vim'
 
 ## Path 
@@ -16,7 +13,7 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 10)
 _red=`tput setaf 1`
 _sgr0=`tput sgr0`
 
-# use vim syntax in commandline 
+# use vim keybinding in commandline 
 set -o vi
 
 # Prompt setting
@@ -29,10 +26,10 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 source ~/.nvm/nvm.sh
 
 ## rbenv
-
 eval "$(rbenv init -)"
 rbenv global 2.4.2
-rbenv rehash 
+rbenv rehash
+
 # bash completion 
 if [ -f /usr/local/etc/bash_completion ]; then
 	. /usr/local/etc/bash_completion
@@ -59,7 +56,7 @@ fi
 source ~/.shells/aliases
 
 ## shell option 
-shopt -s histappend 
+shopt -s histappend
 
 ## Environment setting 
 export HISTSIZE=10000
