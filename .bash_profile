@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-export LANG=ko_KR.UTF-8
+unset LANG
 export EDITOR='vim'
 
 ## Path 
@@ -63,3 +63,4 @@ export HISTSIZE=10000
 export HISTFILESIZE=409600
 export HISTIGNORE="cd:ls:[bf]g:clear:exit:"
 export HISTCONTROL=ignoreups 
+export LANG=ko_KR.UTF-8
