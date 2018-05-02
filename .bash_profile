@@ -1,5 +1,6 @@
 #!/bin/bash 
-
+# https://stackoverflow.com/questions/11287564/getting-sed-error-illegal-byte-sequence-in-bash
+# illegal byte sequence error 관련 오류
 unset LANG
 export EDITOR='vim'
 
