@@ -1,8 +1,12 @@
 (require 'package)
-
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) 
+(unless (assoc-default "melpa" package-archives)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
+(unless (assoc-default "org" package-archives)
+  (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t))
 (package-initialize)
+
+(setq user-full-name "Bohyung Kim"
+      user-mail-address "bohyungkim@me.com")
 
 (setq dsdstudio/packages
       '(org
@@ -97,6 +101,7 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
 (setq web-mode-extra-snippets
       '(("erb" . (("errender" . "<%= | %>")))))
 
@@ -113,7 +118,11 @@
 
 (require 'org)
 (setq org-log-done t)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+
 (put 'upcase-region 'disabled nil)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -134,8 +143,8 @@
  '(org-fontify-whole-heading-line t)
  '(package-selected-packages
    (quote
-    (yasnippet-snippets ob-browser flycheck-kotlin kotlin-mode ob-kotlin exec-path-from-shell parinfer inf-clojure typescript-mode swift-mode actionscript-mode ag yaml-mode xwidgete websocket web-server web-mode uuidgen solaire-mode sass-mode powerline org-plus-contrib org-blog ob-go ob-diagrams neotree multiple-cursors minimap markdown-mode magit jsx-mode indent-guide helm-projectile helm-ls-git helm-ag gradle-mode fzf flycheck face-remap+ emmet-mode doom-themes dockerfile-mode company color-theme-monokai cider auto-complete all-the-icons-dired ac-js2)))
- '(vc-annotate-background "#1B2229")
+    (vue-html-mode vue-mode yasnippet-snippets ob-browser flycheck-kotlin kotlin-mode ob-kotlin exec-path-from-shell parinfer inf-clojure typescript-mode swift-mode actionscript-mode ag yaml-mode xwidgete websocket web-server web-mode uuidgen solaire-mode sass-mode powerline org-plus-contrib org-blog ob-go ob-diagrams neotree multiple-cursors minimap markdown-mode magit jsx-mode indent-guide helm-projectile helm-ls-git helm-ag gradle-mode fzf flycheck face-remap+ emmet-mode doom-themes dockerfile-mode company color-theme-monokai cider auto-complete all-the-icons-dired ac-js2)))
+ '(vc-annotate-background "#282c34")
  '(vc-annotate-color-map
    (list
     (cons 20 "#98be65")
