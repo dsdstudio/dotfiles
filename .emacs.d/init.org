@@ -101,6 +101,22 @@ doom-one theme는 이맥스 뜨자마자 바로 로드하도록 설정함
 (setq-default tab-width 4)
 #+END_SRC
 
+** 백업 파일 경로
+
+.emacs.d/autosaves/[].ext
+#+BEGIN_SRC elisp
+(defvar emacs-autosave-directory
+  (concat user-emacs-directory "autosaves/"))
+
+(setq backup-directory-alist
+      `((".*" . ,emacs-autosave-directory))
+      auto-save-file-name-transforms
+      `((".*" ,emacs-autosave-directory t)))
+
+#+END_SRC
+
+* 모듈 연관 설정
+
 ** Helm
 
 helm-ag (the silver searcher) 연동 설정
