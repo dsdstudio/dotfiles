@@ -1,0 +1,145 @@
+* My Emacs Configuration File 
+
+** 초기화
+   
+   clone 
+   
+   #+BEGIN_SRC sh :tangle no
+git clone https://github.com/dsdstudio/dotfiles
+   #+END_SRC
+   
+   .emacs.d
+   
+** Emacs Package 관련 설정  
+   :PROPERTIES:
+   :header-args: :tangle   ~/.emacs.d/init-main.el
+   :END:
+   #+BEGIN_SRC emacs-lisp
+(require 'package)
+(unless (assoc-default "melpa" package-archives)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
+(unless (assoc-default "org" package-archives)
+  (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t))
+(package-initialize)
+
+(setq user-full-name "Bohyung Kim"
+      user-mail-address "bohyungkim@me.com")
+
+(setq dsdstudio/packages
+      '(org
+        org-plus-contrib
+        clojure-mode
+        cider
+        magit
+        doom-themes
+        auto-complete
+        company
+        emmet-mode
+        neotree
+        helm
+        helm-projectile
+        helm-ls-git
+        helm-ag
+        ac-js2
+        js2-mode
+        web-mode
+        gradle-mode
+        flycheck
+        ob-go
+		swift-mode
+        markdown-mode
+        exec-path-from-shell
+        minimap))
+
+(dolist (pkg dsdstudio/packages)
+  (when (not (package-installed-p pkg))
+    (package-install pkg)))
+(require 'doom-themes)
+
+(setq doom-themes-enable-bold t    ; if nil, bolding are universally disabled
+      doom-themes-enable-italic t)  ; if nil, italics are universally disabled
+
+(doom-themes-visual-bell-config)
+(doom-themes-neotree-config)
+
+;; 초기 설정
+(add-hook 'after-init-hook
+          (lambda () (load-theme 'doom-one t) (global-linum-mode 1)))
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+(add-hook 'js-mode-hook 'js2-minor-mode)
+
+;; 환경변수 PATH같은것.. emacs에서 인식할수 있도록. 이설정을 해야 외부프로그램을 인식할수 있다.
+;; 예) fzf, the silver sercher(ag)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
+;; org-babel 설정
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (kotlin . t)
+   (C . t)
+   (clojure . t)
+   (shell . t)))
+
+(setq org-todo-keywords
+  '((sequence "할일" "진행중" "완료")))
+;; clojure cider 관련 설정
+(global-company-mode)
+(add-hook 'cider-repl-mode-hook #'company-mode)
+(add-hook 'cider-mode-hook #'company-mode)
+
+
+(global-set-key (kbd "M-TAB") #'company-complete)
+
+;; 명령 모드일때 helm 자동완성의 지원을 받을수 있도록
+(global-set-key (kbd "M-x") 'helm-M-x)
+
+;; git repository에서 fuzzy search 되도록 
+(global-set-key (kbd "C-x f") 'fzf-git)
+;; 버퍼 찾기시 helm의 buffer 찾기를 사용하도록
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+
+(require 'multiple-cursors)
+;; multiple 커서 단축키 등록
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;; tab size space 4
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
+;; web-mode 관련 설정
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-extra-snippets
+      '(("erb" . (("errender" . "<%= | %>")))))
+
+;; emmet-mode 설정. webmode가 켜지면 emmet-mode도 같이 적용되도록 ..
+(require 'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
+
+(setq web-mode-style-padding 0)
+(setq web-mode-script-padding 0)
+
+(setq helm-ff-transformer-show-only-basename nil
+            helm-ls-git-show-abs-or-relative 'relative)
+(setq helm-ag-base-command "/usr/local/bin/ag --nocolor --nogroup --ignore-case")
+
+(require 'org)
+(setq org-log-done t)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+
+(put 'upcase-region 'disabled nil)
+#+END_SRC
+
+
+#+DESCRIPTION 음냐링
+#+PROPERTY:    header-args:elisp  :tangle ~/Dropbox/dotfiles/.emacs/init-main.el
+#+PROPERTY:    header-args        :results silent   :eval no-export   :comments org
