@@ -1,29 +1,13 @@
 * My Emacs Configuration File 
 
-** 초기화
-   
-   clone 
-   
-   #+BEGIN_SRC sh :tangle no
-git clone https://github.com/dsdstudio/dotfiles
-   #+END_SRC
-   
-   .emacs.d
-   
 ** Emacs Package 관련 설정  
-   :PROPERTIES:
-   :header-args: :tangle   ~/.emacs.d/init-main.el
-   :END:
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC elisp
 (require 'package)
 (unless (assoc-default "melpa" package-archives)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
 (unless (assoc-default "org" package-archives)
   (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t))
 (package-initialize)
-
-(setq user-full-name "Bohyung Kim"
-      user-mail-address "bohyungkim@me.com")
 
 (setq dsdstudio/packages
       '(org
@@ -54,41 +38,21 @@ git clone https://github.com/dsdstudio/dotfiles
 (dolist (pkg dsdstudio/packages)
   (when (not (package-installed-p pkg))
     (package-install pkg)))
-(require 'doom-themes)
+#+END_SRC
 
-(setq doom-themes-enable-bold t    ; if nil, bolding are universally disabled
-      doom-themes-enable-italic t)  ; if nil, italics are universally disabled
+   
+** 기본 정보
 
-(doom-themes-visual-bell-config)
-(doom-themes-neotree-config)
+#+BEGIN_SRC elisp
+(setq user-full-name "Bohyung Kim"
+      user-mail-address "bohyungkim@me.com")
+#+END_SRC
 
-;; 초기 설정
-(add-hook 'after-init-hook
-          (lambda () (load-theme 'doom-one t) (global-linum-mode 1)))
-(add-hook 'js2-mode-hook 'ac-js2-mode)
-(add-hook 'js-mode-hook 'js2-minor-mode)
+** 핫키 설정
 
-;; 환경변수 PATH같은것.. emacs에서 인식할수 있도록. 이설정을 해야 외부프로그램을 인식할수 있다.
-;; 예) fzf, the silver sercher(ag)
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
-
-;; org-babel 설정
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((emacs-lisp . t)
-   (kotlin . t)
-   (C . t)
-   (clojure . t)
-   (shell . t)))
-
-(setq org-todo-keywords
-  '((sequence "할일" "진행중" "완료")))
-;; clojure cider 관련 설정
+#+BEGIN_SRC elisp
 (global-company-mode)
-(add-hook 'cider-repl-mode-hook #'company-mode)
-(add-hook 'cider-mode-hook #'company-mode)
-
+(require 'multiple-cursors)
 
 (global-set-key (kbd "M-TAB") #'company-complete)
 
@@ -100,17 +64,86 @@ git clone https://github.com/dsdstudio/dotfiles
 ;; 버퍼 찾기시 helm의 buffer 찾기를 사용하도록
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 
-(require 'multiple-cursors)
 ;; multiple 커서 단축키 등록
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+#+END_SRC
+
+** Theme
+
+#+BEGIN_SRC elisp
+(require 'doom-themes)
+
+(setq doom-themes-enable-bold t    ; if nil, bolding are universally disabled
+      doom-themes-enable-italic t)  ; if nil, italics are universally disabled
+
+(doom-themes-visual-bell-config)
+(doom-themes-neotree-config)
+#+END_SRC
+
+doom-one theme는 이맥스 뜨자마자 바로 로드하도록 설정함
+#+BEGIN_SRC elisp
+(add-hook 'after-init-hook
+          (lambda () (load-theme 'doom-one t) (global-linum-mode 1)))
+#+END_SRC
+
+** Configs 
+
+환경변수 PATH같은것.. emacs에서 인식할수 있도록. 이설정을 해야 외부프로그램을 인식할수 있다.
+예) fzf, the silver sercher(ag)
+#+BEGIN_SRC elisp
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+(put 'upcase-region 'disabled nil)
 ;; tab size space 4
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
+#+END_SRC
 
-;; web-mode 관련 설정
+** Helm
+
+helm-ag (the silver searcher) 연동 설정
+
+#+BEGIN_SRC elisp
+(setq helm-ff-transformer-show-only-basename nil
+            helm-ls-git-show-abs-or-relative 'relative)
+(setq helm-ag-base-command "/usr/local/bin/ag --nocolor --nogroup --ignore-case")
+#+END_SRC
+
+** Cider 
+
+#+BEGIN_SRC elisp
+(add-hook 'cider-repl-mode-hook #'company-mode)
+(add-hook 'cider-mode-hook #'company-mode)
+#+END_SRC
+
+** Org 
+
+#+BEGIN_SRC elisp
+(require 'org)
+(setq org-log-done t)
+;; org-babel 설정
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (kotlin . t)
+   (C . t)
+   (clojure . t)
+   (shell . t)))
+
+(setq org-todo-keywords
+  '((sequence "할일" "진행중" "완료")))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+#+END_SRC
+
+** WebMode 
+
+#+BEGIN_SRC elisp
 (require 'web-mode)
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+(add-hook 'js-mode-hook 'js2-minor-mode)
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
@@ -123,23 +156,12 @@ git clone https://github.com/dsdstudio/dotfiles
 ;; emmet-mode 설정. webmode가 켜지면 emmet-mode도 같이 적용되도록 ..
 (require 'emmet-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
-
 (setq web-mode-style-padding 0)
 (setq web-mode-script-padding 0)
-
-(setq helm-ff-transformer-show-only-basename nil
-            helm-ls-git-show-abs-or-relative 'relative)
-(setq helm-ag-base-command "/usr/local/bin/ag --nocolor --nogroup --ignore-case")
-
-(require 'org)
-(setq org-log-done t)
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-
-(put 'upcase-region 'disabled nil)
 #+END_SRC
 
 
-#+DESCRIPTION 음냐링
-#+PROPERTY:    header-args:elisp  :tangle ~/Dropbox/dotfiles/.emacs/init-main.el
+#+PROPERTY:    header-args:elisp  :tangle ~/Dropbox/dotfiles/.emacs.d/init-main.el
+#+PROPERTY:    header-args:emacs-lisp  :tangle ~/Dropbox/dotfiles/.emacs.d/init-main.el
 #+PROPERTY:    header-args        :results silent   :eval no-export   :comments org
+

@@ -5,6 +5,6 @@
 ;; tangle it
 (org-babel-tangle)
 ;; load it
-(load-file (concat user-emacs-directory "init-main.el"))
+(load-file (concat "~/Dropbox/dotfiles/.emacs.d/" "init-main.el"))
 ;; finally byte-compile it
-(byte-compile-file (concat user-emacs-directory "init-main.el"))
+(byte-compile-file (concat "~/Dropbox/dotfiles/.emacs.d/" "init-main.el"))
