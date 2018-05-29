@@ -2,7 +2,7 @@
 # 초기화 선행조건 
 # Xcode command Line tools
 
-NODE_VERSION=v6.2.2
+NODE_VERSION=v8.11.2
 NVM_DIR=~/.nvm
 
 brew update && brew install git tmux tree bash bash-completion leiningen tmuxinator-completion
@@ -15,7 +15,7 @@ defaults write com.apple.finder QLEnableTextSelection -bool TRUE; killall Finder
 brew install --HEAD vcprompt 
 
 ## nvm 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
 
 ## tmuxinator 설치 tmux 세션 관리용
