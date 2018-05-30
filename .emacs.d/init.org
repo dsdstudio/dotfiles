@@ -1,43 +1,45 @@
-* My Emacs Configuration File 
 
+* My Emacs Configuration File 
+  
 ** Emacs Package 관련 설정  
    #+BEGIN_SRC elisp
-(require 'package)
-(unless (assoc-default "melpa" package-archives)
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t))
-(unless (assoc-default "org" package-archives)
-  (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t))
-(package-initialize)
+     (require 'package)
+     (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+     (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+     (package-initialize)
 
-(setq dsdstudio/packages
-      '(org
-        org-plus-contrib
-        clojure-mode
-        cider
-        magit
-        doom-themes
-        auto-complete
-        company
-        emmet-mode
-        neotree
-        helm
-        helm-projectile
-        helm-ls-git
-        helm-ag
-        ac-js2
-        js2-mode
-        web-mode
-        gradle-mode
-        flycheck
-        ob-go
-		swift-mode
-        markdown-mode
-        exec-path-from-shell
-        minimap))
+     (setq dsdstudio/packages
+       '(org
+         org-plus-contrib
+         clojure-mode
+         cider
+         magit
+         doom-themes
+         auto-complete
+         company
+         emmet-mode
+         neotree
+         helm
+         helm-projectile
+         helm-ls-git
+         helm-ag
+         ac-js2
+         js2-mode
+         web-mode
+         gradle-mode
+         flycheck
+         ob-go
+         ob-kotlin
+         fzf
+         swift-mode
+         multiple-cursors
+         markdown-mode
+         exec-path-from-shell
+         minimap))
 
-(dolist (pkg dsdstudio/packages)
-  (when (not (package-installed-p pkg))
-    (package-install pkg)))
+     (dolist (pkg dsdstudio/packages)
+       (when (not (package-installed-p pkg))
+     (package-install pkg)))
 #+END_SRC
 
    
@@ -177,7 +179,7 @@ helm-ag (the silver searcher) 연동 설정
 #+END_SRC
 
 
-#+PROPERTY:    header-args:elisp  :tangle ~/Dropbox/dotfiles/.emacs.d/init-main.el
-#+PROPERTY:    header-args:emacs-lisp  :tangle ~/Dropbox/dotfiles/.emacs.d/init-main.el
+#+PROPERTY:    header-args:elisp  :tangle ~/.emacs.d/init-main.el
+#+PROPERTY:    header-args:emacs-lisp  :tangle ~/.emacs.d/init-main.el
 #+PROPERTY:    header-args        :results silent   :eval no-export   :comments org
 
