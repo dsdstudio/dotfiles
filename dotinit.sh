@@ -5,7 +5,7 @@
 # @since 2012.12.25              #
 ##################################
 
-BASE_DIR=$HOME/Dropbox/dotfiles
+BASE_DIR=`pwd`
 LINK_TARGET_FILES=".bash_profile .gitconfig .shells .vim .vimrc .tmux.conf .emacs.d/init.el"
 
 
