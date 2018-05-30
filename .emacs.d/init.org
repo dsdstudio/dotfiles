@@ -15,6 +15,7 @@
          cider
          magit
          doom-themes
+         powerline
          auto-complete
          company
          emmet-mode
@@ -75,13 +76,16 @@
 ** Theme
 
 #+BEGIN_SRC elisp
-(require 'doom-themes)
+  (require 'doom-themes)
+  (require 'powerline)
 
-(setq doom-themes-enable-bold t    ; if nil, bolding are universally disabled
-      doom-themes-enable-italic t)  ; if nil, italics are universally disabled
+  (powerline-default-theme)
 
-(doom-themes-visual-bell-config)
-(doom-themes-neotree-config)
+  ;(setq doom-themes-enable-bold t    ; if nil, bolding are universally disabled
+  ;    doom-themes-enable-italic t)  ; if nil, italics are universally disabled
+
+  ;(doom-themes-visual-bell-config)
+  ;(doom-themes-neotree-config)
 #+END_SRC
 
 doom-one theme는 이맥스 뜨자마자 바로 로드하도록 설정함
