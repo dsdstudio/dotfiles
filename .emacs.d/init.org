@@ -190,6 +190,7 @@ script 섹션의 js-indent가 기본 4인데 2로 조정함
 #+BEGIN_SRC elisp
 (setq indent-tabs-mode nil
       js-indent-level 2)
+(setq css-indent-offset 2)
 #+END_SRC
 
 #+PROPERTY:    header-args:elisp  :tangle ~/.emacs.d/init-main.el
