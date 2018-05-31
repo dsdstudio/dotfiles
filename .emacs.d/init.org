@@ -169,6 +169,7 @@ helm-ag (the silver searcher) 연동 설정
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
@@ -182,6 +183,14 @@ helm-ag (the silver searcher) 연동 설정
 (setq web-mode-script-padding 0)
 #+END_SRC
 
+** vue-mode 
+
+script 섹션의 js-indent가 기본 4인데 2로 조정함
+
+#+BEGIN_SRC elisp
+(setq indent-tabs-mode nil
+      js-indent-level 2)
+#+END_SRC
 
 #+PROPERTY:    header-args:elisp  :tangle ~/.emacs.d/init-main.el
 #+PROPERTY:    header-args:emacs-lisp  :tangle ~/.emacs.d/init-main.el

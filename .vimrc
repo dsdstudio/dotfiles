@@ -39,7 +39,7 @@ syntax on
 " powerline settings
 language en_US.UTF-8
 set laststatus=2
-set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
+set rtp+=~/Library/Python/3.6/lib/python/site-packages/powerline/bindings/vim/
 
 if has("gui_running")
    let s:uname = system("uname")
