@@ -34,7 +34,7 @@
          fzf
          swift-mode
          multiple-cursors
-         multiterm
+         multi-term
          markdown-mode
          exec-path-from-shell
          minimap))
