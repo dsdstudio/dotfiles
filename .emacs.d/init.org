@@ -34,6 +34,7 @@
          fzf
          swift-mode
          multiple-cursors
+         multiterm
          markdown-mode
          exec-path-from-shell
          minimap))
@@ -96,12 +97,18 @@ doom-one theme는 이맥스 뜨자마자 바로 로드하도록 설정함
 
 ** Configs 
 
-환경변수 PATH같은것.. emacs에서 인식할수 있도록. 이설정을 해야 외부프로그램을 인식할수 있다.
+emacs 에서 외부프로그램을 연동해서 사용하는 경우 현재 나의 쉘 기본 설정을 읽어가도록 세팅
 예) fzf, the silver sercher(ag)
 #+BEGIN_SRC elisp
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 (put 'upcase-region 'disabled nil)
+#+END_SRC
+
+*** 에디터 설정
+
+tab 사이즈
+#+BEGIN_SRC elisp
 ;; tab size space 4
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
@@ -109,7 +116,9 @@ doom-one theme는 이맥스 뜨자마자 바로 로드하도록 설정함
 
 ** 백업 파일 경로
 
+편집시 백업파일 (filename.org~)이 다른 경로에 저장되도록 변경하는 설정
 .emacs.d/autosaves/[].ext
+
 #+BEGIN_SRC elisp
 (defvar emacs-autosave-directory
   (concat user-emacs-directory "autosaves/"))
