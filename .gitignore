@@ -3,3 +3,5 @@
 init-main.el
 node_modules
 elpa
+.emacs.d/autosave
+.emacs.d/eshell
