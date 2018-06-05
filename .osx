@@ -118,6 +118,18 @@ update_os_configs() {
 
     # 위설정에 영향받는 App 들 모두 kill 
     for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done
+    
+    defaults write com.apple.finder QLEnableTextSelection -bool TRUE; killall Finder
+    # Mac Keybindings for Home, end, pageup pagedown 
+    mkdir -p ~/Library/KeyBindings/
+    echo " {
+	\"\UF729\" = \"moveToBeginningOfLine:\";
+	\"$\UF729\" = \"moveToBeginningOfLineAndModifySelection:\";
+	\"\UF72B\" = \"moveToEndOfLine:\";
+	\"$\UF72B\" = \"moveToEndOfLineAndModifySelection:\";
+	\"\UF72C\" = \"pageUp:\";
+	\"\UF72D\" = \"pageDown:\";
+}" > ~/Library/KeyBindings/DefaultKeyBinding.dict
 }
 
 validate_os
