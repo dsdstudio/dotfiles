@@ -6,14 +6,13 @@
 ##################################
 
 BASE_DIR=`pwd`
-LINK_TARGET_FILES=".bash_profile .gitconfig .shells .vim .vimrc .tmux.conf .emacs.d/init.el"
+LINK_TARGET_FILES=".bash_profile .gitconfig .shells .vim .vimrc .tmux.conf .emacs.d"
 
-
-# emacs 설정 디렉토리 없는경우 생성
-[ ! -d $HOME/.emacs.d ] && mkdir -p $HOME/.emacs.d
-
-# 미리 정의해놓은 설정파일들 링크 처리
-for FILE_ITEM in $LINK_TARGET_FILES
-do
-	[ ! -h $HOME/$FILE_ITEM ] && ln -sf $BASE_DIR/$FILE_ITEM $HOME/$FILE_ITEM
-done
+link_files() {
+    # 미리 정의해놓은 설정파일들 링크 처리
+    for file_item in $LINK_TARGET_FILES
+    do
+	    [ ! -h $HOME/$file_item ] && ln -sf $BASE_DIR/$file_item $HOME/$file_item
+    done
+}
+link_files
