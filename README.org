@@ -1,0 +1,15 @@
+* My dotfile 
+
+- .osx => mac osx initialize script 
+- .vimrc => vim setting
+- .bash_profile => bash profile 
+
+package install && environment setting && osx custom configuration all-in-one package 
+
+** initialization script 
+
+#+BEGIN_SRC shell
+chmod +x init.sh
+init.sh
+#+END_SRC
+
