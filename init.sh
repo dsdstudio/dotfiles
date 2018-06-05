@@ -4,6 +4,7 @@
 
 package_install(){
     brew -v update && brew -v install git tmux tree bash bash-completion leiningen tmuxinator-completion the_silver_searcher rbenv fzf
+    brew install -v emacs  --with-cocoa --with-imagemagick@6 --with-librsvg
     brew cask install qlmarkdown
     # vcprompt => vcs info shell 표시용 프로그램 같은 옵션으로 설치불가능 
     brew install --HEAD vcprompt 
