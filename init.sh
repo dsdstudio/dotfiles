@@ -14,7 +14,7 @@ defaults write com.apple.finder QLEnableTextSelection -bool TRUE; killall Finder
 brew install --HEAD vcprompt 
 
 ## nvm 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
 
 ## ruby
