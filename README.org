@@ -1,16 +1,15 @@
-* My dotfile 
+* My dotfile
 
-- .osx => mac osx initialize script 
+- .osx => mac osx initialize script
 - .vimrc => vim setting
-- .bash_profile => bash profile 
+- .bash_profile => bash profile
 - .emacs.d => emacs private configuration [[file:.emacs.d/init.org][Literative configuration]]
 
-package install && environment setting && osx custom configuration all-in-one package 
+package install && environment setting && osx custom configuration all-in-one package
 
-** initialization script 
+** initialization script
 
 #+BEGIN_SRC shell
 chmod +x init.sh
 init.sh
 #+END_SRC
-

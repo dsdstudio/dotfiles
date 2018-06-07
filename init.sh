@@ -36,7 +36,7 @@ dialog() {
     echo "설정하시겠습니까? [y/N]"
     read msg
     case "$msg" in
-        [y,Y]) package_install && ruby_package_install && link_target_files;;
+        [y,Y]) package_install && ruby_package_install && link_target_files && source .osx;;
         [n,N]) exit -1;;
         *) echo "다시 입력해주세요" && dialog;;
     esac
