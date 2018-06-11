@@ -192,6 +192,14 @@ helm-ag (the silver searcher) 연동 설정
 (setq web-mode-script-padding 0)
 #+END_SRC
 
+** flycheck 
+
+파일 열때 기본적으로 flycheck 활성화 처리
+
+#+BEGIN_SRC elisp
+  (add-hook 'after-init-hook #'global-flycheck-mode)
+#+END_SRC
+
 ** vue-mode 
 
 script 섹션의 js-indent가 기본 4인데 2로 조정함
