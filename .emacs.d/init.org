@@ -31,6 +31,7 @@
          flycheck
          ob-go
          ob-kotlin
+         ob-swift
          fzf
          swift-mode
          multiple-cursors
@@ -160,6 +161,7 @@ helm-ag (the silver searcher) 연동 설정
    '((emacs-lisp . t)
      (kotlin . t)
      (C . t)
+     (swift . t)
      (clojure . t)
      (shell . t)))
 
@@ -177,8 +179,6 @@ helm-ag (the silver searcher) 연동 설정
 
 #+BEGIN_SRC elisp
 (require 'web-mode)
-(add-hook 'js2-mode-hook 'ac-js2-mode)
-(add-hook 'js-mode-hook 'js2-minor-mode)
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
