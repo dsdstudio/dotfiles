@@ -166,12 +166,13 @@ helm-ag (the silver searcher) 연동 설정
      (shell . t)))
 
   (setq org-todo-keywords
-    '((sequence "할일" "진행중" "완료")))
+        '((sequence "할일" "진행중" "완료")))
   (define-key global-map "\C-cl" 'org-store-link)
   (define-key global-map "\C-ca" 'org-agenda)
 
   (defun auto-confirm-babel-eval (lang body)
-    (not (string= lang "elisp")))
+    nil)
+
   (setq org-confirm-babel-evaluate 'auto-confirm-babel-eval)
 #+END_SRC
 
