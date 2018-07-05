@@ -153,6 +153,7 @@ helm-ag (the silver searcher) 연동 설정
    'org-babel-load-languages
    '((emacs-lisp . t)
      (kotlin . t)
+     (ruby . t)
      (C . t)
      (swift . t)
      (clojure . t)
@@ -202,6 +203,9 @@ helm-ag (the silver searcher) 연동 설정
 eslint executable path는 local 을 우선시하도록 처리
 
 #+BEGIN_SRC elisp
+  ;; Local Variables:
+  ;; byte-compile-warnings: (not free-vars)
+  ;; End:
   (defun my/use-eslint-from-node-modules ()
     (let* ((root (locate-dominating-file
                   (or (buffer-file-name) default-directory)
