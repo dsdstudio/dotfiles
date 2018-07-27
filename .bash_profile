@@ -8,6 +8,7 @@ export EDITOR='vim'
 export NVM_DIR=$HOME/.nvm
 export ANDROID_HOME=$HOME/Library/Android/sdk
 #export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/Library/Python/2.7/bin
+#export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$HOME/.fastlane/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/Library/Python/3.6/bin
 export JAVA_HOME=$(/usr/libexec/java_home -v 10)
 
@@ -64,5 +65,7 @@ shopt -s histappend
 export HISTSIZE=10000
 export HISTFILESIZE=409600
 export HISTIGNORE="cd:ls:[bf]g:clear:exit:"
-export HISTCONTROL=ignoreups 
+export HISTCONTROL=ignoreups
+# https://coderwall.com/p/-k_93g/mac-os-x-valueerror-unknown-locale-utf-8-in-python python tmux 관련 오류 수정
 export LANG=ko_KR.UTF-8
+export LC_ALL=ko_KR.UTF-8
