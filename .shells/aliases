@@ -16,6 +16,8 @@ alias grep='grep --color'
 
 alias mf=mf
 
+alias java8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
+alias java10="export JAVA_HOME=`/usr/libexec/java_home -v 10`"
 
 ## Personal Aliases 
 alias blog="cd ${HOME}/Dropbox/blog"
