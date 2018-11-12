@@ -47,24 +47,3 @@ if has("gui_running")
       set guifont=Meslo\ LG\ S\ for\ Powerline
    endif
 endif
-
-" vundle settings
-filetype off                   " required!
-
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'pangloss/vim-javascript'
-Plugin 'L9'
-Plugin 'mattn/emmet-vim'
-Plugin 'tpope/vim-fireplace'
-Plugin 'guns/vim-clojure-static'
-Plugin 'guns/vim-clojure-highlight'
-Plugin 'vim-scripts/FuzzyFinder'
-Plugin 'isRuslan/vim-es6'
-Plugin 'SilVer/ultisnips'
-call vundle#end()
-
-filetype plugin indent on     " required!
