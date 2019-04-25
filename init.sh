@@ -1,29 +1,11 @@
 #!/bin/bash
 # 초기화 선행조건 
 # Xcode command Line tools
-
-package_install(){
-    brew -v update && brew -v install git tmux tree bash bash-completion leiningen tmuxinator-completion the_silver_searcher rbenv fzf
-    brew install -v emacs  --with-cocoa --with-imagemagick@6 --with-librsvg
-    brew cask install qlmarkdown
-    # vcprompt => vcs info shell 표시용 프로그램 같은 옵션으로 설치불가능 
-    brew install --HEAD vcprompt 
-
-    ## nvm 
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-    . ~/.nvm/nvm.sh && nvm install --lts && nvm alias default node
-}
-
-ruby_package_install() {
-    ## ruby
-    rbenv install 2.4.2
-    rbenv global 2.4.2
-    rbenv rehash
-    ## tmuxinator 설치 tmux 세션 관리용
-    gem install tmuxinator
-}
+OS=""
+BASE_DIR=`pwd`
 
 link_files() {
+	local LINK_TARGET_FILES=".bash_profile .gitconfig .shells .vim .vimrc .tmux.conf .emacs.d"
     # 미리 정의해놓은 설정파일들 링크 처리
     for file_item in $LINK_TARGET_FILES
     do
@@ -31,17 +13,64 @@ link_files() {
     done
 }
 
+detect_os() {
+	case `uname` in
+		Linux) OS="linux" ;;
+		Darwin) OS="osx" ;;
+		*) OS="unknown" ;;
+	esac
+}
+
+package_install_osx() {
+    brew -v update && brew -v install git tmux tree bash bash-completion leiningen tmuxinator-completion the_silver_searcher rbenv fzf
+    brew install -v emacs  --with-cocoa --with-imagemagick@6 --with-librsvg
+    brew cask install qlmarkdown
+    # vcprompt => vcs info shell 표시용 프로그램 같은 옵션으로 설치불가능 
+    brew install --HEAD vcprompt 
+
+    ## nvm 
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+    . ~/.nvm/nvm.sh && nvm install --lts && nvm alias default node
+
+    ## ruby
+    rbenv install 2.4.2
+    rbenv global 2.4.2
+    rbenv rehash
+    ## tmuxinator 설치 tmux 세션 관리용
+    gem install tmuxinator
+}
+package_install_linux() {
+    sudo apt-get install -yy tmux openjdk-11-jdk curl tree rbenv
+    curl -sL https://github.com/djl/vcprompt/raw/master/bin/vcprompt > $HOME/.local/bin/vcprompt
+    chmod 755 $HOME/.local/bin/vcprompt
+    ## nvm 
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+}
+
+setup() {
+	detect_os
+	if [ -L "$HOME/.gitconfig" ]; then
+		echo "이미 설정되어있습니다."
+		exit -1
+	fi
+	eval "package_install_$OS" && link_files
+	case "$OS" in
+	   linux) ;;
+	   osx) source .osx;;
+	   *) ;;
+	esac
+
+}
+
 dialog() {
     local msg
     echo "설정하시겠습니까? [y/N]"
     read msg
     case "$msg" in
-        [y,Y]) package_install && ruby_package_install && link_target_files && source .osx;;
+        [y,Y]) setup ;;
         [n,N]) exit -1;;
         *) echo "다시 입력해주세요" && dialog;;
     esac
 }
-BASE_DIR=`pwd`
-LINK_TARGET_FILES=".bash_profile .gitconfig .shells .vim .vimrc .tmux.conf .emacs.d"
 
 dialog
