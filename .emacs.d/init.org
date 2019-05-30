@@ -108,6 +108,12 @@ tab 사이즈
 (setq-default tab-width 4)
 #+END_SRC
 
+*** 한글 폰트 설정 
+
+    #+begin_src elisp
+      (when (eq system-type 'gnu/linux)
+        (set-fontset-font t 'hangul (font-spec :name "NanumGothicCoding")))
+    #+end_src
 ** 백업 파일 경로
 
 편집시 백업파일 (filename.org~)이 다른 경로에 저장되도록 변경하는 설정

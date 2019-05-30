@@ -56,7 +56,7 @@ if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline
 fi
 
 ## specific settings
-source ~/.shells/aliases
+source $HOME/.shells/aliases
 
 ## shell option 
 shopt -s histappend
