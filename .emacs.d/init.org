@@ -204,7 +204,9 @@ helm-ag (the silver searcher) 연동 설정
 파일 열때 기본적으로 flycheck 활성화 처리
 
 #+BEGIN_SRC elisp
+  (require 'flycheck)
   (add-hook 'after-init-hook #'global-flycheck-mode)
+  (flycheck-add-mode 'javascript-eslint 'web-mode)
 #+END_SRC
 
 
