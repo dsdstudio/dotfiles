@@ -9,3 +9,4 @@
 (load-file (concat user-emacs-directory "init-main.el"))
 ;; finally byte-compile it
 (byte-compile-file (concat user-emacs-directory "init-main.el"))
+(kill-buffer)
