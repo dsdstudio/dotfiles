@@ -10,7 +10,7 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 #export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/Library/Python/2.7/bin
 #export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$HOME/.fastlane/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/Library/Python/3.6/bin
-export JAVA_HOME=$(/usr/libexec/java_home -v 10)
+export JAVA_HOME=$(/usr/libexec/java_home -v 12)
 
 ## Colors 
 _red=`tput setaf 1`

@@ -28,4 +28,4 @@
 [push]
 	default = matching
 [commit]
-	gpgsign = true
+#gpgsign = true
