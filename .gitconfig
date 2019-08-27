@@ -1,7 +1,7 @@
 [user]
 	email = dsdgun@gmail.com
 	name = Bohyung Kim
-	signingkey = 95C5A93A305AE75A
+#	signingkey = 95C5A93A305AE75A
 [color]
 	ui = auto
 
