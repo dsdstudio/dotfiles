@@ -36,6 +36,9 @@ if [ -f /usr/local/etc/bash_completion ]; then
 	. /usr/local/etc/bash_completion
 fi
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+if [ -f $HOME/.fzf.bash ]; then
+	. $HOME/.fzf.bash
+fi
 
 # http://feeds.macosxhints.com/~r/macosxhints/recent/~3/257065700/article.php
 complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
