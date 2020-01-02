@@ -7,7 +7,7 @@ export EDITOR='vim'
 ## Path 
 export NVM_DIR=$HOME/.nvm
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$HOME/.fastlane/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/Library/Python/3.6/bin
+export PATH=$PATH:$HOME/Environments/flutter/bin:$HOME/.fastlane/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/Library/Python/3.6/bin
 export JAVA_HOME=$(/usr/libexec/java_home -v 12)
 
 ## Colors 
