@@ -25,8 +25,6 @@ package_install_osx() {
     brew -v update && brew -v install git tmux tree bash bash-completion leiningen tmuxinator-completion the_silver_searcher rbenv fzf
     brew install -v emacs  --with-cocoa --with-imagemagick@6 --with-librsvg
     brew cask install qlmarkdown
-    # vcprompt => vcs info shell 표시용 프로그램 같은 옵션으로 설치불가능 
-    brew install --HEAD vcprompt 
 
     ## nvm 
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
@@ -41,8 +39,6 @@ package_install_osx() {
 }
 package_install_linux() {
     sudo apt-get install -yy tmux openjdk-11-jdk curl tree rbenv
-    curl -sL https://github.com/djl/vcprompt/raw/master/bin/vcprompt > $HOME/.local/bin/vcprompt
-    chmod 755 $HOME/.local/bin/vcprompt
     ## nvm 
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 }
