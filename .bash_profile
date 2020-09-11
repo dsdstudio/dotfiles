@@ -4,6 +4,7 @@
 unset LANG
 export EDITOR='vim'
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
 ## Path 
 export NVM_DIR=$HOME/.nvm
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -70,3 +71,5 @@ export HISTCONTROL=ignoreups
 # https://coderwall.com/p/-k_93g/mac-os-x-valueerror-unknown-locale-utf-8-in-python python tmux 관련 오류 수정
 export LANG=ko_KR.UTF-8
 export LC_ALL=ko_KR.UTF-8
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
