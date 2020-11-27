@@ -10,7 +10,6 @@ function mf() {
 }
 
 ## Aliases
-alias ls='ls -G'
 alias ll='ls -Gla'
 alias grep='grep --color'
 
