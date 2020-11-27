@@ -3,13 +3,39 @@
 # illegal byte sequence error 관련 오류
 unset LANG
 export EDITOR='vim'
+OS=""
+detect_os() {
+	case `uname` in
+		Linux) OS="linux" ;;
+		Darwin) OS="osx" ;;
+		*) OS="unknown" ;;
+	esac
+}
 
-export BASH_SILENCE_DEPRECATION_WARNING=1
+update_java_home() {
+	case $OS in
+		Darwin) export JAVA_HOME=$(/usr/libexec/java_home -v 11) ;;
+		*) export JAVA_HOME=$(java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home' | awk '{print $3}');;
+	esac
+}
+
+update_prompt() {
+	export BASH_SILENCE_DEPRECATION_WARNING=1
+	case $OS in
+		Darwin) export PS1='\[${_red}\]`if [ "$(vcprompt)" != "" ]; then echo "• $(vcprompt -f %b%m)"; fi`\[${c_g}\]``\[${_sgr0}\] \w λ ' ;;
+		*) source $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh ;;
+	esac
+}
+
+export PATH=$PATH:$HOME/.local/bin
+detect_os
+update_java_home
+update_prompt
+
 ## Path 
 export NVM_DIR=$HOME/.nvm
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$HOME/Environments/flutter/bin:$HOME/.fastlane/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/Library/Python/3.6/bin
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 
 ## Colors 
 _red=`tput setaf 1`
@@ -17,9 +43,6 @@ _sgr0=`tput sgr0`
 
 # use vim keybinding in commandline 
 set -o vi
-
-# Prompt setting
-export PS1='\[${_red}\]`if [ "$(vcprompt)" != "" ]; then echo "• $(vcprompt -f %b%m)"; fi`\[${c_g}\]``\[${_sgr0}\] \w λ '
 
 # ls coloring for OSX Dark background 
 export LSCOLORS=dxfxcxdxbxegedabagacad
