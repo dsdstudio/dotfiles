@@ -1,4 +1,4 @@
-BASE_DIR=/Users/bhkim/dotfiles
+BASE_DIR=`pwd`
 LINK_TARGET_FILES=".bash_profile .gitconfig .shells .vim .vimrc .tmux.conf .emacs.d"
 # 미리 정의해놓은 설정파일들 링크 처리
 for file_item in $LINK_TARGET_FILES
