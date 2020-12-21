@@ -3,7 +3,7 @@ set cindent
 set smartindent 
 set smarttab
 set nobackup	
-set incsearch		" do incremental searching
+set nu hls ic is noswf
 set showmatch	        " see matches on {} and ()
 set formatoptions=croq		
 set comments=sr:/*,mb:*,el:*/,://,b:#,:%L%,:%l%,:%,:XCOMM,n:>,fb:- " comentarios
@@ -14,8 +14,6 @@ set background=dark
 set sw=4 " << >> 눌렀을때 몇칸 이동할꺼냐 ?
 set ts=4 
 set sts=4 " 탭키 눌렀을때 몇칸 이동할꺼냐 ?
-set nu	
-set hlsearch	
 set wrap
 set history=1000 
 set undolevels=1000 
