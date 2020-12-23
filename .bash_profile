@@ -22,7 +22,7 @@ update_java_home() {
 update_prompt() {
 	export BASH_SILENCE_DEPRECATION_WARNING=1
 	case $OS in
-		Darwin) export PS1='\[${_red}\]`if [ "$(vcprompt)" != "" ]; then echo "• $(vcprompt -f %b%m)"; fi`\[${c_g}\]``\[${_sgr0}\] \w λ ' ;;
+		osx) export PS1='\[${_red}\]`if [ "$(vcprompt)" != "" ]; then echo "• $(vcprompt -f %b%m)"; fi`\[${c_g}\]``\[${_sgr0}\] \w λ ' ;;
 		*) source $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh ;;
 	esac
 }
@@ -35,7 +35,8 @@ update_prompt
 ## Path 
 export NVM_DIR=$HOME/.nvm
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$HOME/Environments/flutter/bin:$HOME/.fastlane/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/Library/Python/3.6/bin
+export PATH=$PATH:$HOME/Environments/flutter/bin:$HOME/.cargo/bin:$HOME/.fastlane/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/Library/Python/3.6/bin
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 
 ## Colors 
 _red=`tput setaf 1`
