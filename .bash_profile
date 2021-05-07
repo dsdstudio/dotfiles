@@ -14,7 +14,7 @@ detect_os() {
 
 update_java_home() {
 	case $OS in
-		Darwin) export JAVA_HOME=$(/usr/libexec/java_home -v 11) ;;
+		osx) export JAVA_HOME=$(/usr/libexec/java_home -v 11) ;;
 		*) export JAVA_HOME=$(java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home' | awk '{print $3}');;
 	esac
 }
