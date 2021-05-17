@@ -36,7 +36,6 @@ update_prompt
 export NVM_DIR=$HOME/.nvm
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$HOME/Environments/flutter/bin:$HOME/.cargo/bin:$HOME/.fastlane/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/Library/Python/3.6/bin
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 
 ## Colors 
 _red=`tput setaf 1`

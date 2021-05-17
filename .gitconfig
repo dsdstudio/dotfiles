@@ -29,3 +29,5 @@
 	default = matching
 [commit]
 #gpgsign = true
+[credential]
+	helper = store
