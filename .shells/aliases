@@ -1,9 +1,11 @@
 #!/bin/bash
 
 OS=`uname | tr '[:upper:]' '[:lower:]'`
-if [ "$OS" == "darwin" ]; then
-	alias ls='ls -G'
-fi
+case $OS in
+	linux) alias ls='ls --color' ;;
+	darwin) alias ls='ls -G' ;;
+	*) ;;
+esac
 
 function mf() {
 	unzip -p $1 META-INF/MANIFEST.MF
