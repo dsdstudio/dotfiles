@@ -17,14 +17,13 @@ alias grep='grep --color'
 
 alias mf=mf
 
-if [ "$OS" == "Darwin" ]; then
+if [ "$OS" == "darwin" ]; then
 	alias java8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
 	alias java11="export JAVA_HOME=`/usr/libexec/java_home -v 11`"
 	alias java14="export JAVA_HOME=`/usr/libexec/java_home -v 14`"
 fi
 
 ## Personal Aliases 
-alias blog="cd ${HOME}/Dropbox/blog"
 alias httpserv='python -m SimpleHTTPServer'
 
 ## docker Aliases 
