@@ -5,10 +5,11 @@
 ** Emacs Package 관련 설정  
    #+BEGIN_SRC elisp
      (require 'package)
+     (setq byte-compile-warnings '(cl-functions))
      (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
      (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
      (package-initialize)
-
+     (setq warning-suppress-log-types '((package reinitialization)))     
      (setq dsdstudio/packages
        '(org
          org-plus-contrib
@@ -40,7 +41,7 @@
          markdown-mode
          exec-path-from-shell
          minimap))
-
+     
      (dolist (pkg dsdstudio/packages)
        (when (not (package-installed-p pkg))
      (package-install pkg)))
