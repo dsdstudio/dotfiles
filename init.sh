@@ -22,20 +22,13 @@ detect_os() {
 }
 
 package_install_osx() {
-    brew -v update && brew -v install git tmux tree bash bash-completion leiningen tmuxinator-completion the_silver_searcher rbenv fzf
+    brew -v update && brew -v install git tmux tree bash bash-completion clojure the_silver_searcher rbenv fzf
     brew install -v emacs  --with-cocoa --with-imagemagick@6 --with-librsvg
     brew cask install qlmarkdown
 
     ## nvm 
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
     . ~/.nvm/nvm.sh && nvm install --lts && nvm alias default node
-
-    ## ruby
-    rbenv install 2.4.2
-    rbenv global 2.4.2
-    rbenv rehash
-    ## tmuxinator 설치 tmux 세션 관리용
-    gem install tmuxinator
 }
 package_install_linux() {
     sudo apt-get install -yy tmux openjdk-11-jdk curl tree rbenv
