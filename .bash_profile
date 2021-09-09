@@ -74,6 +74,6 @@ update_config() {
 
 detect_os
 update_java_home
-update_prompt
 update_path
-
+update_prompt
+update_config
