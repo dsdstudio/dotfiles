@@ -11,7 +11,7 @@ detect_os() {
 detect_os
 
 function merge_sql() {
-	UPDATE_FILE_LIST=`ls ~/temp/v0.20/*.sql`
+	UPDATE_FILE_LIST=`ls ~/temp/*.sql`
 	OUTPUT=output.sql
 	for i in $UPDATE_FILE_LIST
 	do
@@ -25,10 +25,10 @@ function merge_sql() {
 
 if [ $# -ne 1 ]
 then 
-	echo "usage ./sql-merge.sh PLMS20."
-	echo "usage ./sql-merge.sh replace_schema_name"
+	echo "usage ./sql-merge.sh <filepath_pattern> <schemaname>"
+	echo "usage ./sql-merge.sh ~/temp/*.sql PLMS20."
 	exit -1
 fi
 
 detect_os
-update_version $1 $2
+merge_sql $1 
